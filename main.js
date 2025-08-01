@@ -1,5 +1,4 @@
 document.addEventListener('DOMContentLoaded', function() {
-    // Mobile Navigation Toggle
     const mobileNavToggle = document.getElementById('mobileNavToggle');
     const navMenu = document.getElementById('navMenu');
     
@@ -7,7 +6,6 @@ document.addEventListener('DOMContentLoaded', function() {
         navMenu.classList.toggle('show');
     });
 
-    // Close mobile menu when clicking on a nav link
     const navLinks = document.querySelectorAll('nav ul li a');
     navLinks.forEach(link => {
         link.addEventListener('click', function() {
@@ -15,7 +13,6 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // Header scroll effect
     const header = document.getElementById('header');
     window.addEventListener('scroll', function() {
         if (window.scrollY > 50) {
@@ -25,7 +22,6 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
-    // Smooth scrolling for anchor links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function(e) {
             e.preventDefault();
@@ -46,7 +42,6 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // Custom amount toggle in donation form
     const amountCustom = document.getElementById('amountCustom');
     const customAmountField = document.getElementById('customAmountField');
     
@@ -60,14 +55,12 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // Form submission handlers
     const donationForm = document.getElementById('donationForm');
     if (donationForm) {
         donationForm.addEventListener('submit', function(e) {
             e.preventDefault();
             const name = document.getElementById('name').value;
             
-            // Get selected amount
             let amount;
             const selectedAmount = document.querySelector('input[name="amount"]:checked').value;
             if (selectedAmount === 'custom') {
@@ -76,10 +69,8 @@ document.addEventListener('DOMContentLoaded', function() {
                 amount = selectedAmount;
             }
             
-            // Simulate donation processing
-            alert(`Thank you, ${name}! Your donation of $${amount} has been processed. We'll send a confirmation to your email.`);
+            alert(`Thank you, ${name}! Your donation of ${amount} has been processed. We'll send confirmation to your email.`);
             
-            // Reset form
             donationForm.reset();
             customAmountField.style.display = 'none';
         });
@@ -91,50 +82,29 @@ document.addEventListener('DOMContentLoaded', function() {
             e.preventDefault();
             const name = document.getElementById('contactName').value;
             
-            // Simulate contact form submission
             alert(`Thank you, ${name}! Your message has been sent. We'll get back to you soon.`);
             
-            // Reset form
             contactForm.reset();
         });
     }
-    
-    // Animation on scroll for achievements section
-    const achievementItems = document.querySelectorAll('.achievement-item');
-    
-    // Simple function to check if element is in viewport
-    function isInViewport(element) {
-        const rect = element.getBoundingClientRect();
-        return (
-            rect.top >= 0 &&
-            rect.left >= 0 &&
-            rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
-            rect.right <= (window.innerWidth || document.documentElement.clientWidth)
-        );
-    }
-    
-    // Add animation class when scrolling
-    function checkScroll() {
-        achievementItems.forEach(item => {
-            if (isInViewport(item)) {
-                item.style.opacity = '1';
-                item.style.transform = 'translateY(0)';
+
+    const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('fade-in');
             }
         });
-    }
-    
-    // Set initial state for animation
-    achievementItems.forEach(item => {
-        item.style.opacity = '0';
-        item.style.transform = 'translateY(20px)';
-        item.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+    }, observerOptions);
+
+    document.querySelectorAll('.achievement-card, .tier-card, .about-content, .contact-grid').forEach(el => {
+        observer.observe(el);
     });
-    
-    // Check on scroll and on load
-    window.addEventListener('scroll', checkScroll);
-    window.addEventListener('load', checkScroll);
-    
-    // Highlight current section in navigation
+
     function highlightNavigation() {
         const sections = document.querySelectorAll('section');
         const navLinks = document.querySelectorAll('nav ul li a');
@@ -143,18 +113,16 @@ document.addEventListener('DOMContentLoaded', function() {
         
         sections.forEach(section => {
             const sectionTop = section.offsetTop;
-            const sectionHeight = section.clientHeight;
             const headerHeight = document.getElementById('header').offsetHeight;
             
-            if (window.pageYOffset >= sectionTop - headerHeight - 50) {
+            if (window.pageYOffset >= sectionTop - headerHeight - 100) {
                 currentSection = section.getAttribute('id');
             }
         });
         
         navLinks.forEach(link => {
-            link.classList.remove('active');
             if (link.getAttribute('href') === `#${currentSection}`) {
-                link.style.color = '#FFD700';
+                link.style.color = 'var(--gold)';
             } else {
                 link.style.color = '';
             }
