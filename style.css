@@ -695,6 +695,115 @@ footer {
     border: 1px solid rgba(255, 184, 0, 0.1);
 }
 
+.contact-details a {
+    color: var(--gold);
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.contact-details a:hover {
+    color: var(--gold-light);
+    text-decoration: underline;
+}
+
+.social-links a {
+    font-family: 'Arial', sans-serif;
+    font-weight: bold;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+}
+
+.footer-links a {
+    position: relative;
+    display: inline-block;
+    padding: 0.25rem 0;
+}
+
+.footer-links a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background: var(--gold);
+    transition: width 0.3s ease;
+}
+
+.footer-links a:hover::after {
+    width: 100%;
+}
+
+.copyright a {
+    color: var(--gold);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.copyright a:hover {
+    color: var(--gold-light);
+    text-decoration: underline;
+}
+
+.btn {
+    cursor: pointer;
+    border: none;
+}
+
+.btn:focus {
+    outline: 2px solid var(--gold);
+    outline-offset: 2px;
+}
+
+.btn:active {
+    transform: translateY(-1px);
+}
+
+nav ul li a.active {
+    color: var(--gold);
+}
+
+nav ul li a.active::after {
+    width: 100%;
+}
+
+.skip-link {
+    position: absolute;
+    top: -40px;
+    left: 6px;
+    background: var(--gold);
+    color: var(--black);
+    padding: 8px;
+    text-decoration: none;
+    border-radius: 4px;
+    z-index: 1000;
+    font-weight: 600;
+}
+
+.skip-link:focus {
+    top: 6px;
+}
+
+a:focus {
+    outline: 2px solid var(--gold);
+    outline-offset: 2px;
+    border-radius: 4px;
+}
+
+a::selection {
+    background: var(--gold);
+    color: var(--black);
+}
+
+.contact-form a {
+    color: var(--gold);
+    text-decoration: underline;
+}
+
+.contact-form a:hover {
+    color: var(--gold-light);
+}
+
 @media (max-width: 768px) {
     header {
         padding: 1rem;
@@ -756,6 +865,25 @@ footer {
 
     section {
         padding: 4rem 1rem;
+    }
+
+    .social-links {
+        justify-content: center;
+    }
+    
+    .social-links a {
+        width: 45px;
+        height: 45px;
+        font-size: 1.1rem;
+    }
+    
+    .contact-details a {
+        word-break: break-all;
+    }
+    
+    nav ul li a {
+        padding: 1rem 0;
+        display: block;
     }
 }
 
