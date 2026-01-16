@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>South Brunswick Aerospace Team</title>
+
+      <link rel="stylesheet" href="style.css">
+      <script src="main.js" defer></script>
+      <!-- Google Search Console Verification -->
+      <meta name="google-site-verification" content="0g-zsXxK22qk61NeeSB49EWUDqOBXFYPFuvx8hd41Es">
+
+      <!-- Primary Meta Tags -->
+      <meta name="title" content="South Brunswick Aerospace Team">
+</head>
+
+<body>
+      <header id="header" role="banner">
+            <div class="header-container">
+                  <div class="logo">
+                        <img src="./assets/logo/gold-logo.png"
+                              alt="South Brunswick Aerospace Team Logo - Gold rocket emblem" width="50" height="50">
+                        <div class="logo-text">SB Aerospace</div>
+                  </div>
+                  <button class="mobile-nav-toggle" id="mobileNavToggle" aria-label="Toggle mobile navigation menu"
+                        aria-expanded="false">☰</button>
+                  <nav role="navigation" aria-label="Main navigation">
+                        <ul id="navMenu">
+                              <li><a href="Home.html" aria-label="Go to homepage">Home</a></li>
+                              <li><a href="AboutUs.html" aria-label="Learn about our team">About Us</a></li>
+                              <li><a href="Showcase.html" aria-label="View our aerospace projects">Our Work</a></li>
+                              <li><a href="Achievements.html" aria-label="Explore our specialized teams">Teams</a></li>
+                              <li><a href="Sponsorship.html" aria-label="Become a team sponsor">Sponsor</a></li>
+                              <li><a href="Donation.html" aria-label="Make a donation">Donate</a></li>
+                              <li><a href="Contact.html" aria-label="Contact our team">Contact</a></li>
+                              <li><a href="Legal.html" aria-label="View our legal documents">Legal</a></li>
+                        </ul>
+                  </nav>
+            </div>
+      </header>
+
+      <main>
+            <section class="achievements" id="achievements" aria-labelledby="teams-heading">
+                  <div class="container">
+                        <div class="section-title">
+                              <h2 id="teams-heading">Our Specialized Aerospace Team</h2>
+                        </div>
+                        <div class="achievements-grid">
+                              <article class="achievement-card">
+                                    <span class="achievement-icon" role="img" aria-label="Rocket icon">🚀</span>
+                                    <h3>American Rocketry Challenge Team</h3>
+                                    <p>Competing in America's largest student rocketry competition with over 5,000
+                                          participants nationwide. Top performing teams launch near Washington D.C. and
+                                          present their innovations at Capitol Hill.</p>
+                              </article>
+                        </div>
+                  </div>
+            </section>
+
+            <section class="board-members" id="board" aria-labelledby="board-heading">
+                  <div class="container">
+                        <div class="section-title">
+                              <h2 id="board-heading">Board Members</h2>
+                              <p class="section-subtitle">Our leadership team guiding the aerospace innovation</p>
+                        </div>
+                        <div class="board-grid">
+                              <article class="board-member">
+                                    <a href="https://www.linkedin.com/in/zafir-shamsi/" target="_blank">
+                                          <img src="./assets/team/Zafir.jpg" alt="Zafir Shamsi" width="200"
+                                                height="200">
+                                    </a>
+                                    <h3>Zafir Shamsi</h3>
+                                    <p>President</p>
+                              </article>
+                              <article class="board-member">
+                                    <a href="https://www.linkedin.com/in/aarush-latti/" target="_blank">
+                                          <img src="./assets/team/Zafir.jpg" alt="Aarush Latti" width="200"
+                                                height="200">
+                                    </a>
+                                    <h3>Aarush Latti</h3>
+                                    <p>Vice-President</p>
+                              </article>
+                              <article class="board-member">
+                                    <a href="https://www.linkedin.com/in/vivek-banker/" target="_blank">
+                                          <img src="./assets/team/Zafir.jpg" alt="Vivek Banker" width="200"
+                                                height="200">
+                                    </a>
+                                    <h3>Vivek Banker</h3>
+                                    <p>Executive Member</p>
+                              </article>
+                              <article class="board-member">
+                                    <a href="https://www.linkedin.com/in/vishnu-thodupunoori/" target="_blank">
+                                          <img src="./assets/team/Zafir.jpg" alt="Vishnu Thodupunoori" width="200"
+                                                height="200">
+                                    </a>
+                                    <h3>Vishnu Thodupunoori</h3>
+                                    <p>Treasurer</p>
+                              </article>
+                        </div>
+                  </div>
+            </section>
+
+            <section class="teams-section" id="teams" aria-labelledby="teams-list-heading">
+                  <div class="container">
+                        <div class="section-title">
+                              <h2 id="teams-list-heading">Team Members</h2>
+                              <p class="section-subtitle">Meet our dedicated team members</p>
+                        </div>
+                        <div class="team-buttons" style="text-align: center;">
+                              <button id="team1-btn" class="btn" onclick="showTeam(1)">Team 1</button>
+                              <button id="team2-btn" class="btn" onclick="showTeam(2)">Team 2</button>
+                        </div>
+                        <div id="team1-list" class="team-list" style="display: none;">
+                              <div class="member-card" onclick="openModal('Sammy')">
+                                    <img src="./assets/team/Sammy.JPG" alt="Samuel Asefa" width="200" height="200">
+                                    <p>Samuel Asefa</p>
+                              </div>
+                              <!-- Add more Team 1 members here -->
+                        </div>
+                        <div id="team2-list" class="team-list" style="display: none;">
+
+                              <!-- Add more Team 2 members here -->
+                        </div>
+                  </div>
+            </section>
+      </main>
+
+      <!-- Modal Structure -->
+      <div id="personModal" class="modal">
+            <div class="modal-content">
+                  <span class="close" onclick="closeModal()">&times;</span>
+                  <div class="modal-header">
+                        <img id="modalImage" src="" alt="Person">
+                        <h2 id="modalName"></h2>
+                        <p class="role" id="modalRole"></p>
+                  </div>
+                  <div class="modal-body" id="modalBody"></div>
+                  <div class="social-links" id="modalSocial"></div>
+            </div>
+      </div>
+
+      <footer role="contentinfo">
+            <div class="footer-grid">
+                  <div class="footer-column">
+                        <h3>South Brunswick Aerospace Team</h3>
+                        <p>Pushing aerospace engineering boundaries through innovation, teamwork, and dedication in
+                              competitive rocketry and STEM education.</p>
+                  </div>
+                  <div class="footer-column">
+                        <h3>Site Navigation</h3>
+                        <nav aria-label="Footer navigation">
+                              <ul class="footer-links">
+                                    <li><a href="#home">Home</a></li>
+                                    <li><a href="#about">About</a></li>
+                                    <li><a href="#showcase">Our Work</a></li>
+                                    <li><a href="#achievements">Teams</a></li>
+                                    <li><a href="#sponsorship">Sponsor</a></li>
+                                    <li><a href="#donation">Donate</a></li>
+                              </ul>
+                        </nav>
+                  </div>
+                  <div class="footer-column">
+                        <h3>Connect With Us</h3>
+                        <nav aria-label="Footer navigation">
+                              <ul class="footer-links">
+                                    <li><a href="#" rel="noopener">Facebook</a></li>
+                                    <li><a href="#" rel="noopener">Instagram</a></li>
+                                    <li><a href="#" rel="noopener">LinkedIn</a></li>
+                                    <li><a href="#" rel="noopener">YouTube</a></li>
+                              </ul>
+                        </nav>
+                  </div>
+            </div>
+            <div class="copyright">
+                  <p>&copy; 2025 South Brunswick Aerospace Team. All Rights Reserved. Developed by <a
+                              href="https://github.com/samuel-asefa" target="_blank" rel="noopener"
+                              style="color: var(--gold);">Sammy</a>.</p>
+            </div>
+      </footer>
+</body>
+
+</html>

@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>South Brunswick Aerospace Team</title>
+
+      <link rel="stylesheet" href="style.css">
+      <script src="main.js" defer></script>
+      <!-- Google Search Console Verification -->
+      <meta name="google-site-verification" content="0g-zsXxK22qk61NeeSB49EWUDqOBXFYPFuvx8hd41Es">
+
+      <!-- Primary Meta Tags -->
+      <title>South Brunswick Aerospace Team</title>
+      <meta name="title" content="South Brunswick Aerospace Team">
+</head>
+
+<body>
+      <header id="header" role="banner">
+            <div class="header-container">
+                  <div class="logo">
+                        <img src="./assets/logo/gold-logo.png"
+                              alt="South Brunswick Aerospace Team Logo - Gold rocket emblem" width="50" height="50">
+                        <div class="logo-text">SB Aerospace</div>
+                  </div>
+                  <button class="mobile-nav-toggle" id="mobileNavToggle" aria-label="Toggle mobile navigation menu"
+                        aria-expanded="false">☰</button>
+                  <nav role="navigation" aria-label="Main navigation">
+                        <ul id="navMenu">
+                              <li><a href="Home.html" aria-label="Go to homepage">Home</a></li>
+                              <li><a href="AboutUs.html" aria-label="Learn about our team">About Us</a></li>
+                              <li><a href="Showcase.html" aria-label="View our aerospace projects">Our Work</a></li>
+                              <li><a href="Achievements.html" aria-label="Explore our specialized teams">Teams</a></li>
+                              <li><a href="Sponsorship.html" aria-label="Become a team sponsor">Sponsor</a></li>
+                              <li><a href="Donation.html" aria-label="Make a donation">Donate</a></li>
+                              <li><a href="Contact.html" aria-label="Contact our team">Contact</a></li>
+                              <li><a href="Legal.html" aria-label="View our legal documents">Legal</a></li>
+                        </ul>
+                  </nav>
+            </div>
+      </header>
+
+      <main>
+            <section class="donation" id="donation" aria-labelledby="donation-heading">
+                  <div class="container">
+                        <div class="section-title">
+                              <h2 id="donation-heading">Support Our Aerospace Mission</h2>
+                              <p class="section-subtitle">Help us reach for the stars and inspire the next generation
+                              </p>
+                        </div>
+                        <div class="donation-card">
+                              <form id="donationForm" aria-labelledby="donation-heading">
+                                    <div class="form-group">
+                                          <label for="name">Full Name</label>
+                                          <input type="text" id="name" placeholder="Enter your name" required
+                                                aria-describedby="name-help">
+                                          <small id="name-help">Your name for donation acknowledgment</small>
+                                    </div>
+                                    <div class="form-group">
+                                          <label for="email">Email Address</label>
+                                          <input type="email" id="email" placeholder="Enter your email" required
+                                                aria-describedby="email-help">
+                                          <small id="email-help">For donation receipt and team updates</small>
+                                    </div>
+                                    <div class="form-group">
+                                          <label>Donation Amount</label>
+                                          <div class="amount-grid" role="radiogroup" aria-labelledby="amount-label">
+                                                <div class="amount-option">
+                                                      <input type="radio" id="amount25" name="amount" value="25"
+                                                            checked>
+                                                      <label for="amount25">$25</label>
+                                                </div>
+                                                <div class="amount-option">
+                                                      <input type="radio" id="amount50" name="amount" value="50">
+                                                      <label for="amount50">$50</label>
+                                                </div>
+                                                <div class="amount-option">
+                                                      <input type="radio" id="amount100" name="amount" value="100">
+                                                      <label for="amount100">$100</label>
+                                                </div>
+                                                <div class="amount-option">
+                                                      <input type="radio" id="amountCustom" name="amount"
+                                                            value="custom">
+                                                      <label for="amountCustom">Other</label>
+                                                </div>
+                                          </div>
+                                    </div>
+                                    <div class="form-group" id="customAmountField" style="display: none;">
+                                          <label for="customAmount">Custom Amount</label>
+                                          <input type="number" id="customAmount" placeholder="Enter amount" min="1">
+                                    </div>
+                                    <div class="form-group">
+                                          <label for="message">Message (Optional)</label>
+                                          <input type="text" id="message" placeholder="Leave a message of support">
+                                    </div>
+                                    <button type="submit" class="btn btn-block" aria-describedby="donate-help">Donate
+                                          Now</button>
+                                    <small id="donate-help">Secure donation processing through our trusted payment
+                                          system</small>
+                              </form>
+                        </div>
+                  </div>
+            </section>
+
+
+      </main>
+
+      <footer role="contentinfo">
+            <div class="footer-grid">
+                  <div class="footer-column">
+                        <h3>South Brunswick Aerospace Team</h3>
+                        <p>Pushing aerospace engineering boundaries through innovation, teamwork, and dedication in
+                              competitive rocketry and STEM education.</p>
+                  </div>
+                  <div class="footer-column">
+                        <h3>Site Navigation</h3>
+                        <nav aria-label="Footer navigation">
+                              <ul class="footer-links">
+                                    <li><a href="#home">Home</a></li>
+                                    <li><a href="#about">About</a></li>
+                                    <li><a href="#showcase">Our Work</a></li>
+                                    <li><a href="#achievements">Teams</a></li>
+                                    <li><a href="#sponsorship">Sponsor</a></li>
+                                    <li><a href="#donation">Donate</a></li>
+                              </ul>
+                        </nav>
+                  </div>
+                  <div class="footer-column">
+                        <h3>Connect With Us</h3>
+                        <nav aria-label="Social media navigation">
+                              <ul class="footer-links">
+                                    <li><a href="#" rel="noopener">Facebook</a></li>
+                                    <li><a href="#" rel="noopener">Instagram</a></li>
+                                    <li><a href="#" rel="noopener">LinkedIn</a></li>
+                                    <li><a href="#" rel="noopener">YouTube</a></li>
+                              </ul>
+                        </nav>
+                  </div>
+            </div>
+            <div class="copyright">
+                  <p>&copy; 2025 South Brunswick Aerospace Team. All Rights Reserved. Developed by <a
+                              href="https://github.com/samuel-asefa" target="_blank" rel="noopener"
+                              style="color: var(--gold);">Sammy</a>.</p>
+            </div>
+      </footer>
+</body>
+
+</html>
