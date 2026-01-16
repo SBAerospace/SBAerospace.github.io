@@ -1,0 +1,36 @@
+{
+      "rewrites": [
+            {
+                  "source": "/",
+                  "destination": "/Home.html"
+            },
+            {
+                  "source": "/AboutUs",
+                  "destination": "/AboutUs.html"
+            },
+            {
+                  "source": "/Achievements",
+                  "destination": "/Achievements.html"
+            },
+            {
+                  "source": "/Contact",
+                  "destination": "/Contact.html"
+            },
+            {
+                  "source": "/Donation",
+                  "destination": "/Donation.html"
+            },
+            {
+                  "source": "/Legal",
+                  "destination": "/Legal.html"
+            },
+            {
+                  "source": "/Showcase",
+                  "destination": "/Showcase.html"
+            },
+            {
+                  "source": "/Sponsorship",
+                  "destination": "/Sponsorship.html"
+            }
+      ]
+}
