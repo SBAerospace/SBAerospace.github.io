@@ -1,442 +1,215 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <!-- Primary Meta Tags -->
-    <title>South Brunswick Aerospace Team</title>
-    <meta name="title" content="South Brunswick Aerospace Team">
-    <meta name="description" content="Join South Brunswick High School's aerospace team competing in the American Rocketry Challenge. We design rockets, UAVs, and aerospace solutions with cutting-edge airbrakes technology and liquid propulsion systems.">
-    <meta name="keywords" content="South Brunswick Aerospace, high school rocketry, American Rocketry Challenge, aerospace engineering, student rockets, STEM education, New Jersey rocketry team, liquid rocket engines, airbrakes technology, competition rocketry">
-    <meta name="author" content="South Brunswick Aerospace Team">
-    <meta name="robots" content="index, follow">
-    
-    <!-- Canonical URL -->
-    <link rel="canonical" href="https://sbaerospace.github.io/">
-    
-    <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://sbaerospace.github.io/">
-    <meta property="og:title" content="South Brunswick Aerospace Team">
-    <meta property="og:description" content="Passionate high school students designing rockets and aerospace solutions. Competing in America's largest rocketry challenge with innovative airbrakes and liquid propulsion technology.">
-    <meta property="og:image" content="https://sbaerospace.github.io/assets/team/2025-nationals.jpeg">
-    <meta property="og:image:alt" content="South Brunswick Aerospace Team at 2025 Nationals Competition">
-    <meta property="og:site_name" content="South Brunswick Aerospace Team">
-    <meta property="og:locale" content="en_US">
-    
-    <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://southbrunswickaerospace.com/">
-    <meta property="twitter:title" content="South Brunswick Aerospace Team | High School Rocketry Champions">
-    <meta property="twitter:description" content="Passionate high school students designing rockets and aerospace solutions. Competing in America's largest rocketry challenge with innovative technology.">
-    <meta property="twitter:image" content="https://southbrunswickaerospace.com/assets/team/2025-nationals.jpeg">
-    <meta property="twitter:image:alt" content="South Brunswick Aerospace Team at 2025 Nationals Competition">
-    
-    <!-- Additional SEO Meta Tags -->
-    <meta name="theme-color" content="#D4AF37">
-    <meta name="msapplication-TileColor" content="#D4AF37">
-    <meta name="application-name" content="SB Aerospace">
-    
-    <!-- Geo Location -->
-    <meta name="geo.region" content="US-NJ">
-    <meta name="geo.placename" content="South Brunswick, New Jersey">
-    <meta name="geo.position" content="40.3779;-74.5336">
-    <meta name="ICBM" content="40.3779, -74.5336">
-    
-    <!-- Contact Information -->
-    <meta name="contact" content="sbaerospace@gmail.com">
-    <meta name="reply-to" content="sbaerospace@gmail.com">
-    
-    <!-- Favicon and Icons -->
-    <link rel="icon" type="image/x-icon" href="/assets/logo/white-logo.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="/assets/logo/white-logo.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/assets/logo/white-logo.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/assets/logo/white-logo.png">
-    
-    <!-- Preload Critical Resources -->
-    <link rel="preload" href="style.css" as="style">
-    <link rel="preload" href="/assets/logo/gold-logo.png" as="image">
-    
-    <!-- Stylesheets -->
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="main.js">
-    
-    <!-- Structured Data - Organization -->
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "Organization",
-        "name": "South Brunswick Aerospace Team",
-        "alternateName": "SB Aerospace",
-        "url": "https://sbaerospace.github.io/",
-        "logo": "https://sbaerospace.github.io/assets/logo/gold-logo.png",
-        "description": "High school aerospace team from South Brunswick competing in the American Rocketry Challenge, specializing in rocket design, UAVs, and aerospace engineering solutions.",
-        "foundingDate": "2023",
-        "email": "sbaerospace@gmail.com",
-        "telephone": "+1-732-666-1752",
-        "address": {
-            "@type": "PostalAddress",
-            "addressLocality": "South Brunswick",
-            "addressRegion": "NJ",
-            "addressCountry": "US"
-        },
-        "sameAs": [
-            "https://facebook.com/southbrunswickaerospace",
-            "https://instagram.com/southbrunswickaerospace",
-            "https://linkedin.com/company/southbrunswickaerospace"
-        ],
-        "knowsAbout": [
-            "Aerospace Engineering",
-            "Rocket Design",
-            "American Rocketry Challenge",
-            "UAV Development",
-            "STEM Education",
-            "High School Competition"
-        ]
-    }
-    </script>
-    
-    <!-- Structured Data - Educational Organization -->
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "EducationalOrganization",
-        "name": "South Brunswick Aerospace Team",
-        "description": "Student aerospace team specializing in competitive rocketry and engineering education",
-        "url": "https://southbrunswickaerospace.com",
-        "parentOrganization": {
-            "@type": "HighSchool",
-            "name": "South Brunswick High School"
-        },
-        "educationalUse": "STEM Education",
-        "teaches": [
-            "Aerospace Engineering",
-            "Rocket Propulsion",
-            "Avionics Systems",
-            "Computer Aided Design",
-            "Team Collaboration"
-        ]
-    }
-    </script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SBAerospace — South Brunswick High School Aerospace</title>
+  <meta name="description" content="SBAerospace is South Brunswick High School's student-run aerospace engineering team. We design, build, and launch rockets — and build the electronics and software that fly them." />
+  <link rel="stylesheet" href="style.css" />
+  <script src="main.js" defer></script>
 </head>
 <body>
-    <header id="header" role="banner">
-        <div class="header-container">
-            <div class="logo">
-                <img src="/assets/logo/gold-logo.png" alt="South Brunswick Aerospace Team Logo - Gold rocket emblem" width="50" height="50">
-                <div class="logo-text">SB Aerospace</div>
-            </div>
-            <button class="mobile-nav-toggle" id="mobileNavToggle" aria-label="Toggle mobile navigation menu" aria-expanded="false">☰</button>
-            <nav role="navigation" aria-label="Main navigation">
-                <ul id="navMenu">
-                    <li><a href="#home" aria-label="Go to homepage">Home</a></li>
-                    <li><a href="#about" aria-label="Learn about our team">About</a></li>
-                    <li><a href="#showcase" aria-label="View our aerospace projects">Our Work</a></li>
-                    <li><a href="#achievements" aria-label="Explore our specialized teams">Teams</a></li>
-                    <li><a href="#sponsorship" aria-label="Become a team sponsor">Sponsor</a></li>
-                    <li><a href="#donation" aria-label="Make a donation">Donate</a></li>
-                    <li><a href="#contact" aria-label="Contact our team">Contact</a></li>
-                </ul>
-            </nav>
+  <a href="#main" class="skip-link">Skip to content</a>
+
+  <!-- NAV -->
+  <header>
+    <div class="nav-inner">
+      <a href="index.html" class="logo">
+        <img src="assets/logo/white-logo.png" alt="SBAerospace logo" />
+        SBAerospace
+      </a>
+      <nav class="nav-links" aria-label="Primary navigation">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="projects.html">Work</a>
+        <a href="teams.html">Teams</a>
+        <a href="sponsor.html">Sponsor</a>
+        <a href="contact.html">Contact</a>
+        <a href="tryouts.html" style="color: var(--accent); font-weight: 700;">Tryouts</a>
+      </nav>
+      <div class="nav-actions">
+        <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
+          <!-- Moon: shown in light mode -->
+          <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+          </svg>
+          <!-- Sun: shown in dark mode -->
+          <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="12" cy="12" r="5"/>
+            <line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
+            <line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+          </svg>
+        </button>
+        <a href="contact.html" class="btn-nav">Join Us</a>
+        <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <nav class="mobile-nav" id="mobileNav" aria-label="Mobile navigation">
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="projects.html">Work</a>
+    <a href="teams.html">Teams</a>
+    <a href="sponsor.html">Sponsor</a>
+    <a href="contact.html">Contact</a>
+    <a href="tryouts.html" style="color: var(--accent);">Tryouts →</a>
+  </nav>
+
+  <main id="main">
+
+    <!-- HERO -->
+    <section class="hero">
+      <div class="hero-bg-dots" aria-hidden="true"></div>
+      <div class="hero-inner container" style="grid-template-columns: 1fr; max-width: 760px; text-align: center;">
+        <div>
+          <div class="hero-label">South Brunswick High School · Est. 2023</div>
+          <h1 class="hero-title" style="font-size: clamp(3rem, 6vw, 5rem);">
+            We build rockets.<br />
+            <em>From scratch.</em>
+          </h1>
+          <p class="hero-sub" style="margin: 0 auto 2.5rem; max-width: 520px; font-size: 1.15rem;">
+            SBAerospace is a student-run engineering club at SBHS. We compete in the American Rocketry Challenge and build everything ourselves — airframes, electronics, software, and all.
+          </p>
+          <div class="hero-btns" style="justify-content: center;">
+            <a href="projects.html" class="btn btn-primary">See Our Work</a>
+            <a href="about.html" class="btn btn-outline">About Us</a>
+          </div>
         </div>
-    </header>
+      </div>
+    </section>
 
-    <main>
-        <section class="hero" id="home" role="banner">
-            <div class="hero-content">
-                <h1>South Brunswick Aerospace Team</h1>
-                <p>A team of dedicated high schoolers at South Brunswick High School competing in the American Rocketry Challenge and pioneering aerospace innovation.</p>
-                <div class="hero-buttons">
-                    <a href="#sponsorship" class="btn" aria-label="Become a sponsor and support our team">Become a Sponsor</a>
-                    <a href="#about" class="btn btn-outline" aria-label="Learn more about our aerospace team">Learn More</a>
-                </div>
-            </div>
-        </section>
-
-        <section class="about" id="about" aria-labelledby="about-heading">
-            <div class="container">
-                <div class="section-title">
-                    <h2 id="about-heading">About Our Aerospace Team</h2>
-                    <p class="section-subtitle">Pioneering the future of aerospace engineering through student innovation</p>
-                </div>
-                <div class="about-content">
-                    <div class="about-image">
-                        <img src="/assets/team/2025-nationals.jpeg" alt="South Brunswick Aerospace Team members at 2025 National Competition with their competition rocket" width="600" height="400" loading="lazy">
-                    </div>
-                    <div class="about-text">
-                        <h3>Dedicated to Aerospace Excellence Since 2023</h3>
-                        <p>Our South Brunswick Aerospace Team consists of passionate STEM students dedicated to exploring the frontiers of aerospace engineering. Founded in 2023, we've rapidly grown from a small group of rocket enthusiasts to a competitive team representing South Brunswick High School at national aerospace competitions.</p>
-                        <p>We specialize in designing and building advanced UAVs, competition rockets, and innovative aerospace solutions. Our multidisciplinary team combines expertise in mechanical engineering, computer programming, physics, avionics, and CAD design to create cutting-edge aerospace projects including our revolutionary airbrakes system.</p>
-                        <p>Through collaborative teamwork, scientific dedication, and creative problem-solving, we strive to push the boundaries of what high school aerospace teams can achieve in competitive rocketry and aerospace engineering.</p>
-                        <a href="#achievements" class="btn" aria-label="Explore our three specialized aerospace teams">Explore Our Specialized Teams</a>
-                    </div>
-                </div>
-            </div>
-        </section>
-        
-        <section class="showcase" id="showcase" aria-labelledby="showcase-heading">
-            <div class="container">
-                <div class="section-title">
-                    <h2 id="showcase-heading">Our Aerospace Engineering Projects</h2>
-                    <p class="section-subtitle">Innovative solutions in rocketry, avionics, and aerospace technology</p>
-                </div>
-                <div class="showcase-grid">
-                    <article class="showcase-card">
-                        <img src="/assets/showcase/Airbrakes.png" alt="CAD model of our custom airbrake implementation for precision altitude control" width="300" height="200" loading="lazy">
-                        <h3>Precision Airbrakes System</h3>
-                        <p>Our innovative airbrakes implementation enables precise altitude targeting with high accuracy during American Rocketry Challenge competitions, featuring advanced aerodynamic design and real-time control systems.</p>
-                    </article>
-                    <article class="showcase-card">
-                        <img src="/assets/showcase/CircuitSpace.png" alt="CircuitSpace UI showing our custom circuit planning software for rocket avionics" width="300" height="200" loading="lazy">
-                        <h3>CircuitSpace Avionics Planner</h3>
-                        <p>Our custom-built circuit planning software designed specifically for rocketry teams to easily design, plan, and visualize complex avionics setups and electrical systems for competition rockets.</p>
-                    </article>
-                    <article class="showcase-card">
-                        <img src="/assets/showcase/Rocket++.png" alt="Code editor showing our custom C++ library for rocket control systems" width="300" height="200" loading="lazy">
-                        <h3>Rocket++ Control Library</h3>
-                        <p>Our proprietary C++ software library developed to streamline the configuration and control of airbrakes, recovery systems, and other critical rocket subsystems with efficient, reliable code.</p>
-                    </article>
-                    <article class="showcase-card">
-                        <img src="/assets/showcase/Rocket.jpeg" alt="Our completed competition rocket ready for American Rocketry Challenge launch" width="300" height="200" loading="lazy">
-                        <h3>Competition Rocket Build</h3>
-                        <p>Our fully assembled competition rocket representing hundreds of hours of engineering design, precision manufacturing, and rigorous testing by our dedicated aerospace team members.</p>
-                    </article>
-                    <article class="showcase-card">
-                        <img src="/assets/showcase/CFD.jpg" alt="CFD simulation analysis of our airbrakes system showing airflow dynamics" width="300" height="200" loading="lazy">
-                        <h3>Computational Fluid Dynamics (CFD)</h3>
-                        <p>Advanced CFD analysis and simulation to optimize drag characteristics and flight dynamics of our rocket systems, ensuring peak performance and safety in competitive launches.</p>
-                    </article>
-                </div>
-            </div>
-        </section>
-
-        <section class="achievements" id="achievements" aria-labelledby="teams-heading">
-            <div class="container">
-                <div class="section-title">
-                    <h2 id="teams-heading">Our Specialized Aerospace Teams</h2>
-                    <p class="section-subtitle">Three expert divisions driving innovation in competitive rocketry and aerospace engineering</p>
-                </div>
-                <div class="achievements-grid">
-                    <article class="achievement-card">
-                        <span class="achievement-icon" role="img" aria-label="Fuel pump icon">⛽</span>
-                        <h3>Liquid Propulsion Team</h3>
-                        <p>Developing advanced small-scale liquid rocket engines using gaseous oxygen and hydrocarbon fuels for independent research, propulsion testing, and static fire demonstrations.</p>
-                    </article>
-                    <article class="achievement-card">
-                        <span class="achievement-icon" role="img" aria-label="Rocket icon">🚀</span>
-                        <h3>American Rocketry Challenge Team</h3>
-                        <p>Competing in America's largest student rocketry competition with over 5,000 participants nationwide. Top performing teams launch near Washington D.C. and present their innovations at Capitol Hill.</p>
-                    </article>
-                    <article class="achievement-card">
-                        <span class="achievement-icon" role="img" aria-label="Space icon">🌌</span>
-                        <h3>High Power Rocketry Team</h3>
-                        <p>Engineering advanced rockets exceeding 160+ newton-seconds impulse, featuring dynamic control surfaces, sophisticated avionics packages, and specialized scientific payloads for research missions.</p>
-                    </article>
-                </div>
-            </div>
-        </section>
-
-        <section class="sponsorship" id="sponsorship" aria-labelledby="sponsorship-heading">
-            <div class="container">
-                <div class="section-title">
-                    <h2 id="sponsorship-heading">Partnership & Sponsorship Opportunities</h2>
-                    <p class="section-subtitle">Partner with us to support the next generation of aerospace engineers</p>
-                </div>
-                <div class="sponsorship-grid">
-                    <article class="tier-card">
-                        <div class="tier-name">Bronze Sponsor</div>
-                        <div class="tier-price">$50-99</div>
-                        <ul class="tier-features">
-                            <li>Website recognition and acknowledgment</li>
-                            <li>Social media and competition media acknowledgment</li>
-                            <li>Credits in team presentations and reports</li>
-                        </ul>
-                        <a href="#contact" class="btn" aria-label="Contact us to become a Bronze sponsor">Get Started</a>
-                    </article>
-                    <article class="tier-card popular">
-                        <div class="tier-name">Silver Sponsor</div>
-                        <div class="tier-price">$100-199</div>
-                        <ul class="tier-features">
-                            <li>Company logo placement on team equipment</li>
-                            <li>Featured mentions across social media platforms</li>
-                            <li>Regular newsletter updates on team progress</li>
-                            <li>Exclusive annual team meetup invitation</li>
-                        </ul>
-                        <a href="#contact" class="btn" aria-label="Contact us to become a Silver sponsor">Get Started</a>
-                    </article>
-                    <article class="tier-card">
-                        <div class="tier-name">Gold Sponsor</div>
-                        <div class="tier-price">$200+</div>
-                        <ul class="tier-features">
-                            <li>Prominent company decal on competition rockets</li>
-                            <li>Featured placement on team website homepage</li>
-                            <li>Full recognition in all media appearances</li>
-                            <li>Access to 100K+ audience reach across platforms</li>
-                        </ul>
-                        <a href="#contact" class="btn" aria-label="Contact us to become a Gold sponsor">Get Started</a>
-                    </article>
-                </div>
-                <div class="custom-info">
-                    <p>Need a custom partnership package? Let's discuss your specific interests and goals.</p>
-                    <a href="#contact" class="btn" aria-label="Contact us for custom sponsorship opportunities">Contact Us</a>
-                </div>
-            </div>
-        </section>
-
-        <section class="donation" id="donation" aria-labelledby="donation-heading">
-            <div class="container">
-                <div class="section-title">
-                    <h2 id="donation-heading">Support Our Aerospace Mission</h2>
-                    <p class="section-subtitle">Help us reach for the stars and inspire the next generation</p>
-                </div>
-                <div class="donation-card">
-                    <form id="donationForm" aria-labelledby="donation-heading">
-                        <div class="form-group">
-                            <label for="name">Full Name</label>
-                            <input type="text" id="name" placeholder="Enter your name" required aria-describedby="name-help">
-                            <small id="name-help">Your name for donation acknowledgment</small>
-                        </div>
-                        <div class="form-group">
-                            <label for="email">Email Address</label>
-                            <input type="email" id="email" placeholder="Enter your email" required aria-describedby="email-help">
-                            <small id="email-help">For donation receipt and team updates</small>
-                        </div>
-                        <div class="form-group">
-                            <label>Donation Amount</label>
-                            <div class="amount-grid" role="radiogroup" aria-labelledby="amount-label">
-                                <div class="amount-option">
-                                    <input type="radio" id="amount25" name="amount" value="25" checked>
-                                    <label for="amount25">$25</label>
-                                </div>
-                                <div class="amount-option">
-                                    <input type="radio" id="amount50" name="amount" value="50">
-                                    <label for="amount50">$50</label>
-                                </div>
-                                <div class="amount-option">
-                                    <input type="radio" id="amount100" name="amount" value="100">
-                                    <label for="amount100">$100</label>
-                                </div>
-                                <div class="amount-option">
-                                    <input type="radio" id="amountCustom" name="amount" value="custom">
-                                    <label for="amountCustom">Other</label>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="form-group" id="customAmountField" style="display: none;">
-                            <label for="customAmount">Custom Amount</label>
-                            <input type="number" id="customAmount" placeholder="Enter amount" min="1">
-                        </div>
-                        <div class="form-group">
-                            <label for="message">Message (Optional)</label>
-                            <input type="text" id="message" placeholder="Leave a message of support">
-                        </div>
-                        <button type="submit" class="btn btn-block" aria-describedby="donate-help">Donate Now</button>
-                        <small id="donate-help">Secure donation processing through our trusted payment system</small>
-                    </form>
-                </div>
-            </div>
-        </section>
-
-        <section class="contact" id="contact" aria-labelledby="contact-heading">
-            <div class="container">
-                <div class="section-title">
-                    <h2 id="contact-heading">Get In Touch With Our Team</h2>
-                    <p class="section-subtitle">Ready to launch our partnership and support aerospace education?</p>
-                </div>
-                <div class="contact-grid">
-                    <div class="contact-info">
-                        <h3>Contact Information</h3>
-                        <address>
-                            <div class="contact-item">
-                                <div class="contact-icon" role="img" aria-label="Location">📍</div>
-                                <div class="contact-details">
-                                    <h4>Location</h4>
-                                    <p>South Brunswick, New Jersey, United States</p>
-                                </div>
-                            </div>
-                            <div class="contact-item">
-                                <div class="contact-icon" role="img" aria-label="Email">📧</div>
-                                <div class="contact-details">
-                                    <h4>Email</h4>
-                                    <p><a href="mailto:sbaerospace@gmail.com">sbaerospace@gmail.com</a></p>
-                                </div>
-                            </div>
-                            <div class="contact-item">
-                                <div class="contact-icon" role="img" aria-label="Phone">📱</div>
-                                <div class="contact-details">
-                                    <h4>Phone</h4>
-                                    <p><a href="tel:+17326661752">(732) 666-1752</a></p>
-                                </div>
-                            </div>
-                        </address>
-                        <div class="social-links" role="navigation" aria-label="Social media links">
-                            <a href="#" aria-label="Follow us on Facebook">FB</a>
-                            <a href="#" aria-label="Follow us on Twitter">t</a>
-                            <a href="#" aria-label="Follow us on Instagram">i</a>
-                            <a href="#" aria-label="Connect with us on LinkedIn">in</a>
-                        </div>
-                    </div>
-                    <div class="contact-form">
-                        <form id="contactForm" aria-labelledby="contact-heading">
-                            <div class="form-group">
-                                <label for="contactName">Name</label>
-                                <input type="text" id="contactName" placeholder="Your name" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="contactEmail">Email</label>
-                                <input type="email" id="contactEmail" placeholder="Your email" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="contactSubject">Subject</label>
-                                <input type="text" id="contactSubject" placeholder="Subject" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="contactMessage">Message</label>
-                                <textarea id="contactMessage" rows="4" placeholder="Your message" required></textarea>
-                            </div>
-                            <button type="submit" class="btn btn-block">Send Message</button>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <footer role="contentinfo">
-        <div class="footer-grid">
-            <div class="footer-column">
-                <h3>South Brunswick Aerospace Team</h3>
-                <p>Pushing aerospace engineering boundaries through innovation, teamwork, and dedication in competitive rocketry and STEM education.</p>
-            </div>
-            <div class="footer-column">
-                <h3>Site Navigation</h3>
-                <nav aria-label="Footer navigation">
-                    <ul class="footer-links">
-                        <li><a href="#home">Home</a></li>
-                        <li><a href="#about">About</a></li>
-                        <li><a href="#showcase">Our Work</a></li>
-                        <li><a href="#achievements">Teams</a></li>
-                        <li><a href="#sponsorship">Sponsor</a></li>
-                        <li><a href="#donation">Donate</a></li>
-                    </ul>
-                </nav>
-            </div>
-            <div class="footer-column">
-                <h3>Connect With Us</h3>
-                <nav aria-label="Social media navigation">
-                    <ul class="footer-links">
-                        <li><a href="#" rel="noopener">Facebook</a></li>
-                        <li><a href="#" rel="noopener">Instagram</a></li>
-                        <li><a href="#" rel="noopener">LinkedIn</a></li>
-                        <li><a href="#" rel="noopener">YouTube</a></li>
-                    </ul>
-                </nav>
-            </div>
+    <!-- WHAT WE DO -->
+    <section class="section">
+      <div class="container">
+        <div class="section-header center reveal">
+          <div class="section-label">What We Do</div>
+          <h2 class="section-title">Built entirely by students.</h2>
+          <p class="section-sub">
+            Every part of the rocket — and everything inside it — is designed, built, and flown by SBHS students. No kits.
+          </p>
         </div>
-        <div class="copyright">
-            <p>&copy; 2025 South Brunswick Aerospace Team. All Rights Reserved. Developed by <a href="https://github.com/samuel-asefa" target="_blank" rel="noopener" style="color: var(--gold);">Sammy</a>.</p>
+        <div class="cards-grid">
+          <div class="card reveal">
+            <div class="card-icon">🚀</div>
+            <h3>Rocketry</h3>
+            <p>We design our own airframes, fin geometries, and recovery systems. We fly in the American Rocketry Challenge and with local TRA chapters year-round.</p>
+          </div>
+          <div class="card reveal reveal-delay-1">
+            <div class="card-icon">⚡</div>
+            <h3>Electronics</h3>
+            <p>Custom PCBs, avionics, and the Rocket++ flight computer — designed in KiCad and programmed in C. We build the hardware that goes inside the rocket.</p>
+          </div>
+          <div class="card reveal reveal-delay-2">
+            <div class="card-icon">🔩</div>
+            <h3>Mechanical</h3>
+            <p>CAD-driven design in SolidWorks and Fusion 360. FEA on critical structures, composite layups, and 3D printed hardware — everything starts with a drawing.</p>
+          </div>
+          <div class="card reveal reveal-delay-3">
+            <div class="card-icon">💻</div>
+            <h3>Software</h3>
+            <p>Flight simulations, ground station GUIs, and tools like CircuitSpace — an open-source circuit simulator our electronics team built and uses in-house.</p>
+          </div>
         </div>
-    </footer>    
+      </div>
+    </section>
+
+    <!-- HIGHLIGHTED PROJECTS -->
+    <section class="section" style="background: var(--surface);">
+      <div class="container">
+        <div class="section-header reveal">
+          <div class="section-label">Recent Work</div>
+          <h2 class="section-title">Some of what we've built</h2>
+        </div>
+        <div class="cards-grid">
+          <div class="card reveal" style="border-left: 3px solid var(--accent);">
+            <div class="card-icon">🛑</div>
+            <h3>Active Airbrake System</h3>
+            <p>Servo-driven airbrakes that autonomously deploy mid-flight to hit a target apogee. PID control loop, Kalman filter, and a custom PCB — all designed in-house.</p>
+          </div>
+          <div class="card reveal reveal-delay-1" style="border-left: 3px solid var(--accent);">
+            <div class="card-icon">🛰️</div>
+            <h3>Rocket++</h3>
+            <p>Our custom flight computer. Handles dual-deploy ejection charge firing, flight state detection, and telemetry logging to onboard flash memory.</p>
+          </div>
+          <div class="card reveal reveal-delay-2" style="border-left: 3px solid var(--accent);">
+            <div class="card-icon">🏆</div>
+            <h3>American Rocketry Challenge</h3>
+            <p>We compete in ARC — one of the biggest student rocketry competitions in the country. Our rocket has to hit a target altitude and duration with a raw egg payload onboard.</p>
+          </div>
+        </div>
+        <div style="text-align: center; margin-top: 2.5rem;" class="reveal">
+          <a href="projects.html" class="btn btn-dark">All Projects →</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- TEAMS PREVIEW -->
+    <section class="section">
+      <div class="container">
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center;">
+          <div class="reveal">
+            <div class="section-label">Sub-Teams</div>
+            <h2 class="section-title">Four teams,<br /><em>one rocket.</em></h2>
+            <p style="color: var(--text-2); line-height: 1.7; margin-bottom: 1.5rem;">
+              Every part of what we build is owned by a dedicated sub-team — Rocketry, Electronics, Mechanical, and Software. They each have their own focus, but everything has to integrate.
+            </p>
+            <a href="teams.html" class="btn btn-primary">Meet the Teams →</a>
+          </div>
+          <div class="reveal reveal-delay-1">
+            <div style="background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius-lg); overflow: hidden;">
+              <img src="assets/showcase/Rocket.jpeg" alt="SBAerospace rocket on a launch pad" style="width: 100%; height: 300px; object-fit: cover;" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="section-sm">
+      <div class="container">
+        <div class="cta-banner reveal">
+          <h2>Want to get involved?</h2>
+          <p>We're always looking for SBHS students who want to actually build things. No experience required — just show up.</p>
+          <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+            <a href="contact.html" class="btn btn-primary">Join the Club</a>
+            <a href="sponsor.html" class="btn" style="background: rgba(255,255,255,0.12); color: inherit;">Sponsor Us</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <h3>SBAerospace</h3>
+        <p>South Brunswick High School's student-run aerospace engineering team. Founded in 2023.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Pages</h4>
+        <a href="about.html">About</a>
+        <a href="projects.html">Work</a>
+        <a href="teams.html">Teams</a>
+        <a href="sponsor.html">Sponsor</a>
+        <a href="contact.html">Contact</a>
+      </div>
+      <div class="footer-col">
+        <h4>Connect</h4>
+        <a href="mailto:sbhsaerospace@gmail.com">Email</a>
+        <a href="https://github.com/SBAerospace" target="_blank" rel="noopener">GitHub</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2025 SBAerospace. South Brunswick, NJ.</span>
+      <a href="mailto:sbhsaerospace@gmail.com">sbhsaerospace@gmail.com</a>
+    </div>
+  </footer>
+
 </body>
 </html>

@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Teams — SBAerospace</title>
+  <meta name="description" content="Meet the SBAerospace sub-teams: Rocketry, Electronics, Mechanical, and Software — each focused, each essential." />
+  <link rel="stylesheet" href="style.css" />
+  <script src="main.js" defer></script>
+</head>
+<body>
+  <a href="#main" class="skip-link">Skip to content</a>
+
+  <header>
+    <div class="nav-inner">
+      <a href="index.html" class="logo">
+        <img src="assets/logo/white-logo.png" alt="SBAerospace logo" />
+        SBAerospace
+      </a>
+      <nav class="nav-links" aria-label="Primary navigation">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="projects.html">Work</a>
+        <a href="teams.html">Teams</a>
+        <a href="sponsor.html">Sponsor</a>
+        <a href="contact.html">Contact</a>
+        <a href="tryouts.html" style="color: var(--accent); font-weight: 700;">Tryouts</a>
+      </nav>
+      <div class="nav-actions">
+        <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
+          <!-- Moon: shown in light mode -->
+          <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+          </svg>
+          <!-- Sun: shown in dark mode -->
+          <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="12" cy="12" r="5"/>
+            <line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
+            <line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+          </svg>
+        </button>
+        <a href="contact.html" class="btn-nav">Join Us</a>
+        <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <nav class="mobile-nav" id="mobileNav">
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="projects.html">Work</a>
+    <a href="teams.html">Teams</a>
+    <a href="sponsor.html">Sponsor</a>
+    <a href="contact.html">Contact</a>
+    <a href="tryouts.html" style="color: var(--accent);">Tryouts →</a>
+  </nav>
+
+  <main id="main">
+
+    <div class="page-header">
+      <div class="container">
+        <div class="section-label">Sub-Teams</div>
+        <h1>Four teams.<br /><em>One rocket.</em></h1>
+        <p>Every part of what we build is owned by a dedicated sub-team. Here's what each one does and what you'd learn by joining.</p>
+      </div>
+    </div>
+
+    <!-- ── DIVISION CARDS ──────────────────────────────────── -->
+    <section class="section">
+      <div class="container">
+        <div class="division-grid">
+
+          <div class="division-card reveal">
+            <div class="division-card-head">
+              <div class="division-icon">🚀</div>
+              <div>
+                <h3>Rocketry Team</h3>
+                <div class="sub">Design & Launch</div>
+              </div>
+            </div>
+            <p>
+              The rocketry team designs and builds everything that leaves the ground — airframes, nose cones, fins, and recovery systems. They're responsible for translating simulation data into physical hardware and getting the rocket to the pad safely.
+            </p>
+            <div class="division-specs">
+              <div class="div-spec-item">
+                <div class="div-spec-key">Certifications</div>
+                <div class="div-spec-val">TRA L1 target</div>
+              </div>
+              <div class="div-spec-item">
+                <div class="div-spec-key">Main tool</div>
+                <div class="div-spec-val">OpenRocket</div>
+              </div>
+              <div class="div-spec-item">
+                <div class="div-spec-key">Materials</div>
+                <div class="div-spec-val">G12 FG, plywood</div>
+              </div>
+              <div class="div-spec-item">
+                <div class="div-spec-key">Competition</div>
+                <div class="div-spec-val">ARC 2025</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="division-card reveal reveal-delay-1">
+            <div class="division-card-head">
+              <div class="division-icon">⚡</div>
+              <div>
+                <h3>Electronics Team</h3>
+                <div class="sub">Avionics & PCB</div>
+              </div>
+            </div>
+            <p>
+              The electronics team designs and builds the hardware that goes inside the rocket. That means custom PCBs, flight computers, sensor arrays, and telemetry systems. They also write the low-level firmware that makes all of it work.
+            </p>
+            <div class="division-specs">
+              <div class="div-spec-item">
+                <div class="div-spec-key">PCB tool</div>
+                <div class="div-spec-val">KiCad</div>
+              </div>
+              <div class="div-spec-item">
+                <div class="div-spec-key">MCU</div>
+                <div class="div-spec-val">RP2040 / STM32</div>
+              </div>
+              <div class="div-spec-item">
+                <div class="div-spec-key">Main project</div>
+                <div class="div-spec-val">Rocket++</div>
+              </div>
+              <div class="div-spec-item">
+                <div class="div-spec-key">Firmware lang.</div>
+                <div class="div-spec-val">C / MicroPython</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="division-card reveal reveal-delay-2">
+            <div class="division-card-head">
+              <div class="division-icon">🔩</div>
+              <div>
+                <h3>Mechanical Team</h3>
+                <div class="sub">CAD & Fabrication</div>
+              </div>
+            </div>
+            <p>
+              The mechanical team owns the structural side of everything we build. They CAD every component before it gets made, run FEA on critical parts, and do the actual fabrication — whether that's machining, 3D printing, or hand-laying composites.
+            </p>
+            <div class="division-specs">
+              <div class="div-spec-item">
+                <div class="div-spec-key">CAD</div>
+                <div class="div-spec-val">SolidWorks, Fusion</div>
+              </div>
+              <div class="div-spec-item">
+                <div class="div-spec-key">Fab methods</div>
+                <div class="div-spec-val">FDM, composites</div>
+              </div>
+              <div class="div-spec-item">
+                <div class="div-spec-key">Analysis</div>
+                <div class="div-spec-val">FEA, hand calcs</div>
+              </div>
+              <div class="div-spec-item">
+                <div class="div-spec-key">Current focus</div>
+                <div class="div-spec-val">Airbrake system</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="division-card reveal reveal-delay-3">
+            <div class="division-card-head">
+              <div class="division-icon">💻</div>
+              <div>
+                <h3>Software Team</h3>
+                <div class="sub">Simulations & Tools</div>
+              </div>
+            </div>
+            <p>
+              The software team builds the tools the whole club depends on — flight simulators, data visualization pipelines, ground station GUIs, and open-source utilities. They also support the electronics team with embedded firmware when needed.
+            </p>
+            <div class="division-specs">
+              <div class="div-spec-item">
+                <div class="div-spec-key">Languages</div>
+                <div class="div-spec-val">Python, JS, C++</div>
+              </div>
+              <div class="div-spec-item">
+                <div class="div-spec-key">Sim tools</div>
+                <div class="div-spec-val">RASAero, OpenRocket</div>
+              </div>
+              <div class="div-spec-item">
+                <div class="div-spec-key">Main project</div>
+                <div class="div-spec-val">CircuitSpace</div>
+              </div>
+              <div class="div-spec-item">
+                <div class="div-spec-key">Open source</div>
+                <div class="div-spec-val">GitHub</div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ── HOW TEAMS WORK TOGETHER ────────────────────────── -->
+    <section class="section" style="background: var(--surface);">
+      <div class="container">
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center;" class="reveal">
+          <div>
+            <div class="section-label">How We Work</div>
+            <h2 class="section-title">Separate teams,<br /><em>shared rocket.</em></h2>
+            <p style="color: var(--text-2); line-height: 1.7; margin-bottom: 1.25rem;">
+              Each sub-team has its own meetings, leads, and projects — but everything eventually integrates. A fin designed by mechanical has to fit around wires run by electronics. A PID loop written by software has to talk to a servo mounted by mechanical.
+            </p>
+            <p style="color: var(--text-2); line-height: 1.7;">
+              We do cross-team reviews before finalizing any design, and hold weekly all-hands meetings to keep everyone on the same page. There's a lot of overlap — and that's the point.
+            </p>
+          </div>
+          <div class="cards-grid" style="grid-template-columns: 1fr 1fr;">
+            <div class="card" style="grid-column: span 2;">
+              <div class="card-icon">📐</div>
+              <h3>Weekly Design Reviews</h3>
+              <p>Every team presents progress. Leads flag integration concerns early before anything gets built.</p>
+            </div>
+            <div class="card">
+              <div class="card-icon">🔗</div>
+              <h3>Cross-team mentorship</h3>
+              <p>Electronics teaches mechanical to solder. Software teaches rocketry to read sensor data.</p>
+            </div>
+            <div class="card">
+              <div class="card-icon">📁</div>
+              <h3>Shared documentation</h3>
+              <p>Every design file, datasheet, and meeting note lives on our shared GitHub org.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── JOIN ───────────────────────────────────────────── -->
+    <section class="section-sm">
+      <div class="container">
+        <div class="cta-banner reveal">
+          <h2>Want to join a team?</h2>
+          <p>We take new members every semester. You don't need experience — just curiosity and the willingness to show up.</p>
+          <a href="contact.html" class="btn btn-primary">Get in Touch →</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <h3>SBAerospace</h3>
+        <p>South Brunswick High School's student-run aerospace engineering team. We design, build, and fly rockets — and everything inside them.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Pages</h4>
+        <a href="about.html">About</a>
+        <a href="projects.html">Work</a>
+        <a href="teams.html">Teams</a>
+        <a href="sponsor.html">Sponsor</a>
+        <a href="contact.html">Contact</a>
+      </div>
+      <div class="footer-col">
+        <h4>Connect</h4>
+        <a href="mailto:sbhsaerospace@gmail.com">Email Us</a>
+        <a href="https://github.com/SBAerospace" target="_blank" rel="noopener">GitHub</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2025 SBAerospace. South Brunswick, NJ.</span>
+      <a href="contact.html">sbhsaerospace@gmail.com</a>
+    </div>
+  </footer>
+
+</body>
+</html>
