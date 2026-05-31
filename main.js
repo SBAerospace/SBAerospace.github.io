@@ -22,7 +22,7 @@ function applyTheme(theme) {
   banner.className = 'announce-banner';
   banner.id = 'announceBanner';
   banner.innerHTML = `
-    <span>Tryouts for 2026–27 are open — fill out the form and join our Google Classroom.</span>
+    <span>Tryouts for 2026-27 are open: fill out the form and join our Google Classroom.</span>
     <a href="tryouts.html">Learn more →</a>
     <button class="announce-banner-close" aria-label="Dismiss announcement" id="bannerClose">✕</button>
   `;
@@ -109,7 +109,7 @@ document.addEventListener('DOMContentLoaded', function () {
   const programs = {
     rocketry: {
       title: 'Rocketry',
-      desc: 'We design, build, and launch high-power rockets from the ground up — airframes, fins, recovery systems, and all the math behind it.',
+      desc: 'We design, build, and launch high-power rockets from the ground up: airframes, fins, recovery systems, and all the math behind it.',
       features: ['ARC competition builds', 'OpenRocket & RASAero simulation', 'Composite and fiberglass airframes', 'Dual-deploy recovery systems'],
     },
     electronics: {

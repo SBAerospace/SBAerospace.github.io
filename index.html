@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>SBAerospace — South Brunswick High School Aerospace</title>
-  <meta name="description" content="SBAerospace is South Brunswick High School's student-run aerospace engineering team. We design, build, and launch rockets — and build the electronics and software that fly them." />
+  <title>SBAerospace | South Brunswick High School Aerospace</title>
+  <meta name="description" content="SBAerospace is South Brunswick High School's student-run aerospace engineering team. We design, build, and launch rockets, and build the electronics and software that fly them." />
   <link rel="stylesheet" href="style.css" />
   <script src="main.js" defer></script>
 </head>
@@ -65,19 +65,25 @@
     <!-- HERO -->
     <section class="hero">
       <div class="hero-bg-dots" aria-hidden="true"></div>
-      <div class="hero-inner container" style="grid-template-columns: 1fr; max-width: 760px; text-align: center;">
-        <div>
+      <div class="hero-inner container">
+        <div class="hero-text-wrap">
           <div class="hero-label">South Brunswick High School · Est. 2023</div>
-          <h1 class="hero-title" style="font-size: clamp(3rem, 6vw, 5rem);">
+          <h1 class="hero-title">
             We build rockets.<br />
             <em>From scratch.</em>
           </h1>
-          <p class="hero-sub" style="margin: 0 auto 2.5rem; max-width: 520px; font-size: 1.15rem;">
-            SBAerospace is a student-run engineering club at SBHS. We compete in the American Rocketry Challenge and build everything ourselves — airframes, electronics, software, and all.
+          <p class="hero-sub">
+            SBAerospace is a student-run engineering club at SBHS. We compete in the American Rocketry Challenge and build everything ourselves: airframes, electronics, software, and all.
           </p>
-          <div class="hero-btns" style="justify-content: center;">
+          <div class="hero-btns">
             <a href="projects.html" class="btn btn-primary">See Our Work</a>
             <a href="about.html" class="btn btn-outline">About Us</a>
+          </div>
+        </div>
+        <div class="hero-image-wrap reveal reveal-delay-1">
+          <div class="hero-single-frame">
+            <img src="assets/team/2025-nationals.jpeg" alt="South Brunswick Aerospace Team at the American Rocketry Challenge National Finals" />
+            <div class="hero-image-caption">SBAerospace Team at the ARC National Finals</div>
           </div>
         </div>
       </div>
@@ -90,36 +96,36 @@
           <div class="section-label">What We Do</div>
           <h2 class="section-title">Built entirely by students.</h2>
           <p class="section-sub">
-            Every part of the rocket — and everything inside it — is designed, built, and flown by SBHS students. No kits.
+            Every part of the rocket (and everything inside it) is designed, built, and flown by SBHS students. No kits.
           </p>
         </div>
         <div class="cards-grid">
           <div class="card reveal">
-            <div class="card-icon">🚀</div>
+            <div class="card-num-header">01 // Rocketry</div>
             <h3>Rocketry</h3>
             <p>We design our own airframes, fin geometries, and recovery systems. We fly in the American Rocketry Challenge and with local TRA chapters year-round.</p>
           </div>
           <div class="card reveal reveal-delay-1">
-            <div class="card-icon">⚡</div>
+            <div class="card-num-header">02 // Electronics</div>
             <h3>Electronics</h3>
-            <p>Custom PCBs, avionics, and the Rocket++ flight computer — designed in KiCad and programmed in C. We build the hardware that goes inside the rocket.</p>
+            <p>Custom PCBs, avionics, and the Rocket++ flight computer, designed in KiCad and programmed in C. We build the hardware that goes inside the rocket.</p>
           </div>
           <div class="card reveal reveal-delay-2">
-            <div class="card-icon">🔩</div>
+            <div class="card-num-header">03 // Mechanical</div>
             <h3>Mechanical</h3>
-            <p>CAD-driven design in SolidWorks and Fusion 360. FEA on critical structures, composite layups, and 3D printed hardware — everything starts with a drawing.</p>
+            <p>CAD-driven design in SolidWorks and Fusion 360. FEA on critical structures, composite layups, and 3D printed hardware: everything starts with a drawing.</p>
           </div>
           <div class="card reveal reveal-delay-3">
-            <div class="card-icon">💻</div>
+            <div class="card-num-header">04 // Software</div>
             <h3>Software</h3>
-            <p>Flight simulations, ground station GUIs, and tools like CircuitSpace — an open-source circuit simulator our electronics team built and uses in-house.</p>
+            <p>Flight simulations, ground station GUIs, and tools like CircuitSpace, an open-source circuit simulator our electronics team built and uses in-house.</p>
           </div>
         </div>
       </div>
     </section>
 
     <!-- HIGHLIGHTED PROJECTS -->
-    <section class="section" style="background: var(--surface);">
+    <section class="section" style="background: var(--surface); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);">
       <div class="container">
         <div class="section-header reveal">
           <div class="section-label">Recent Work</div>
@@ -127,23 +133,57 @@
         </div>
         <div class="cards-grid">
           <div class="card reveal" style="border-left: 3px solid var(--accent);">
-            <div class="card-icon">🛑</div>
+            <div class="card-num-header">System // 01</div>
             <h3>Active Airbrake System</h3>
-            <p>Servo-driven airbrakes that autonomously deploy mid-flight to hit a target apogee. PID control loop, Kalman filter, and a custom PCB — all designed in-house.</p>
+            <p>Servo-driven airbrakes that autonomously deploy mid-flight to hit a target apogee. PID control loop, Kalman filter, and a custom PCB, all designed in-house.</p>
           </div>
           <div class="card reveal reveal-delay-1" style="border-left: 3px solid var(--accent);">
-            <div class="card-icon">🛰️</div>
+            <div class="card-num-header">Avionics // 02</div>
             <h3>Rocket++</h3>
             <p>Our custom flight computer. Handles dual-deploy ejection charge firing, flight state detection, and telemetry logging to onboard flash memory.</p>
           </div>
           <div class="card reveal reveal-delay-2" style="border-left: 3px solid var(--accent);">
-            <div class="card-icon">🏆</div>
+            <div class="card-num-header">Competition // 03</div>
             <h3>American Rocketry Challenge</h3>
-            <p>We compete in ARC — one of the biggest student rocketry competitions in the country. Our rocket has to hit a target altitude and duration with a raw egg payload onboard.</p>
+            <p>We compete in ARC, one of the biggest student rocketry competitions in the country. Our rocket has to hit a target altitude and duration with a raw egg payload onboard.</p>
           </div>
         </div>
         <div style="text-align: center; margin-top: 2.5rem;" class="reveal">
           <a href="projects.html" class="btn btn-dark">All Projects →</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- BUILD GALLERY -->
+    <section class="section">
+      <div class="container">
+        <div class="section-header reveal">
+          <div class="section-label">Gallery</div>
+          <h2 class="section-title">Engineering in focus</h2>
+          <p class="section-sub">Real hardware, simulations, and field tests from our development cycles.</p>
+        </div>
+        <div class="gallery-grid">
+          <div class="gallery-item reveal">
+            <img src="assets/showcase/Rocket.jpeg" alt="High-power rocket launch day" />
+            <div class="gallery-caption">
+              <h4>TRA Launch Site</h4>
+              <p>Testing airframes and recovery systems on field days.</p>
+            </div>
+          </div>
+          <div class="gallery-item reveal reveal-delay-1">
+            <img src="assets/showcase/Airbrakes.png" alt="Servo-driven airbrake CAD design" />
+            <div class="gallery-caption">
+              <h4>Active Airbrakes</h4>
+              <p>3D CAD simulation of active apogee tuning flaps.</p>
+            </div>
+          </div>
+          <div class="gallery-item reveal reveal-delay-2">
+            <img src="assets/showcase/CircuitSpace.png" alt="Avionics PCB design layout" />
+            <div class="gallery-caption">
+              <h4>Avionics Software</h4>
+              <p>Custom telemetry and simulations developed in-house.</p>
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -156,7 +196,7 @@
             <div class="section-label">Sub-Teams</div>
             <h2 class="section-title">Four teams,<br /><em>one rocket.</em></h2>
             <p style="color: var(--text-2); line-height: 1.7; margin-bottom: 1.5rem;">
-              Every part of what we build is owned by a dedicated sub-team — Rocketry, Electronics, Mechanical, and Software. They each have their own focus, but everything has to integrate.
+              Every part of what we build is owned by a dedicated sub-team: Rocketry, Electronics, Mechanical, and Software. They each have their own focus, but everything has to integrate.
             </p>
             <a href="teams.html" class="btn btn-primary">Meet the Teams →</a>
           </div>
@@ -174,7 +214,7 @@
       <div class="container">
         <div class="cta-banner reveal">
           <h2>Want to get involved?</h2>
-          <p>We're always looking for SBHS students who want to actually build things. No experience required — just show up.</p>
+          <p>We're always looking for SBHS students who want to actually build things. No experience required, just show up.</p>
           <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
             <a href="contact.html" class="btn btn-primary">Join the Club</a>
             <a href="sponsor.html" class="btn" style="background: rgba(255,255,255,0.12); color: inherit;">Sponsor Us</a>
