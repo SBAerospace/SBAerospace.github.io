@@ -698,6 +698,105 @@ footer {
 .reveal-delay-3 { transition-delay: 0.24s; }
 .reveal-delay-4 { transition-delay: 0.32s; }
 
+/* ─── INTERACTIVE HERO ROCKET ──────────────────────────────── */
+.hero-interactive-scene {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 1;
+}
+.interactive-rocket {
+  position: absolute;
+  width: 90px;
+  height: 90px;
+  left: 0;
+  top: 0;
+  opacity: 0.22;
+  transform: translate(-50%, -50%);
+  will-change: transform, opacity;
+  pointer-events: none;
+  transition: opacity 0.3s var(--ease);
+  filter: drop-shadow(0 0 8px rgba(201, 168, 76, 0.35)) drop-shadow(0 0 2px var(--accent));
+}
+[data-theme="dark"] .interactive-rocket {
+  opacity: 0.32;
+  filter: drop-shadow(0 0 12px rgba(212, 175, 81, 0.45)) drop-shadow(0 0 3px var(--accent));
+}
+.interactive-rocket svg {
+  width: 100%;
+  height: 100%;
+}
+.rocket-flame {
+  transform-origin: 50px 84px;
+  animation: flame-flicker 0.12s infinite alternate ease-in-out;
+}
+@keyframes flame-flicker {
+  0% { transform: scaleY(0.85); opacity: 0.4; }
+  100% { transform: scaleY(1.2); opacity: 1; }
+}
+
+/* Exhaust Trail Particles */
+.rocket-particle {
+  position: absolute;
+  width: 5px;
+  height: 5px;
+  background: var(--accent);
+  border-radius: 50%;
+  pointer-events: none;
+  opacity: 0.6;
+  transform: translate(-50%, -50%) scale(1);
+  transition: transform 0.8s var(--ease), opacity 0.8s var(--ease);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .interactive-rocket, .rocket-flame, .rocket-particle {
+    animation: none !important;
+    transition: none !important;
+    display: none !important;
+  }
+}
+
+/* ─── TIMELINE PROGRESS ROCKET ─────────────────────────────── */
+.timeline-rocket {
+  position: absolute;
+  left: 7px;
+  width: 16px;
+  height: 16px;
+  top: 8px;
+  transform: translateY(0) translate(-50%, 0);
+  pointer-events: none;
+  z-index: 5;
+  will-change: transform;
+}
+.timeline-rocket svg {
+  width: 100%;
+  height: 100%;
+}
+
+/* ─── DIVISION CARD MICRO-ANIMATIONS ───────────────────────── */
+.division-card {
+  transition: border-color 0.25s var(--ease), transform 0.25s var(--ease);
+}
+.division-card:hover {
+  transform: translateY(-2px);
+}
+.division-card .division-icon svg {
+  transition: transform 0.3s var(--ease);
+}
+.division-card.div-rocketry:hover .division-icon svg {
+  transform: translateY(-4px) rotate(-5deg);
+}
+.division-card.div-electronics:hover .division-icon svg {
+  transform: scale(1.15);
+}
+.division-card.div-mechanical:hover .division-icon svg {
+  transform: rotate(45deg);
+}
+.division-card.div-software:hover .division-icon svg {
+  transform: scaleX(1.15);
+}
+
 /* ─── RESPONSIVE ─────────────────────────────────────────── */
 @media (max-width: 900px) {
   .hero-inner { grid-template-columns: 1fr; gap: 2.5rem; }
