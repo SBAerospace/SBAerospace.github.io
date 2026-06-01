@@ -248,21 +248,23 @@ document.addEventListener('DOMContentLoaded', function () {
       particle.className = 'rocket-particle';
 
       // CSS rotate(deg) is clockwise. At rotation=0 rocket points up; nozzle is 40px below center.
-      // Rotating local vector (0, +40) clockwise by `rotation` degrees:
-      //   screenX += sin(rot) * 40,  screenY += cos(rot) * 40
+      // Rotating local vector (0, +40) clockwise by `rotation` degrees in screen coords (where +Y is down):
+      //   x_new = localX * cos(rot) - localY * sin(rot) = -40 * sin(rot)
+      //   y_new = localX * sin(rot) + localY * cos(rot) = 40 * cos(rot)
       const angleRad = rotation * Math.PI / 180;
       const sinA = Math.sin(angleRad);
       const cosA = Math.cos(angleRad);
       const nozzleOffset = 40; // px from SVG center to nozzle exit
 
-      particle.style.left = `${x + sinA * nozzleOffset}px`;
+      particle.style.left = `${x - sinA * nozzleOffset}px`;
       particle.style.top  = `${y + cosA * nozzleOffset}px`;
       scene.appendChild(particle);
 
       // Exhaust shoots opposite to nose direction
+      // Since nose direction is (sinA, -cosA), the exhaust direction is (-sinA, cosA)
       const speed = 12 + Math.random() * 14;
       const driftX = -sinA * speed + (Math.random() - 0.5) * 6;
-      const driftY = -cosA * speed + (Math.random() - 0.5) * 6;
+      const driftY = cosA * speed + (Math.random() - 0.5) * 6;
 
       requestAnimationFrame(() => {
         particle.style.transform = `translate(calc(-50% + ${driftX}px), calc(-50% + ${driftY}px)) scale(0.2)`;
