@@ -3,10 +3,63 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Teams | SBAerospace</title>
-  <meta name="description" content="Meet the SBAerospace sub-teams: Rocketry, Electronics, Mechanical, and Software, each focused and essential." />
+  <title>Team | SBAerospace</title>
+  <meta name="description" content="SBAerospace is one unified team with eight specialized roles — from rocketry and electronics to biology and outreach — competing across ARC, NASA TechRise, Genes In Space, MATE ROV, and more." />
   <link rel="stylesheet" href="style.css" />
   <script src="main.js" defer></script>
+  <style>
+    /* ── Competition matrix table ── */
+    .comp-table-wrap { overflow-x: auto; }
+    .comp-table {
+      width: 100%; border-collapse: collapse; font-size: 0.82rem;
+      border: 1px solid var(--border); border-radius: var(--radius-sm); overflow: hidden;
+    }
+    .comp-table th {
+      background: var(--surface); color: var(--text-muted);
+      font-size: 0.68rem; font-weight: 700; text-transform: uppercase;
+      letter-spacing: 0.06em; padding: 0.75rem 1rem; text-align: left;
+      border-bottom: 1px solid var(--border);
+    }
+    .comp-table td {
+      padding: 0.85rem 1rem; border-bottom: 1px solid var(--border);
+      color: var(--text-2); vertical-align: top; line-height: 1.5;
+    }
+    .comp-table tr:last-child td { border-bottom: none; }
+    .comp-table tr:hover td { background: var(--surface); }
+    .comp-table td:first-child { font-weight: 700; color: var(--text); font-size: 0.875rem; white-space: nowrap; }
+    .comp-table td:nth-child(2) { color: var(--accent); font-weight: 600; font-size: 0.78rem; white-space: nowrap; }
+    .comp-dot { display: inline-block; width: 7px; height: 7px; border-radius: 50%; background: var(--accent); }
+    .comp-link { color: var(--accent); text-decoration: underline; text-underline-offset: 3px; font-size: 0.75rem; display: block; margin-top: 2px; }
+    .comp-link:hover { color: var(--accent-dark); }
+
+    /* ── Role tag pills on competition cards ── */
+    .role-pills { display: flex; flex-wrap: wrap; gap: 5px; margin-top: 0.75rem; }
+    .role-pill {
+      background: var(--surface); color: var(--text-2);
+      border: 1px solid var(--border); border-radius: var(--radius-pill);
+      padding: 2px 9px; font-size: 0.68rem; font-weight: 700;
+      text-transform: uppercase; letter-spacing: 0.04em;
+    }
+    .role-pill.primary { background: var(--accent-bg); color: var(--accent); border-color: var(--accent); }
+
+    /* ── Competition card status dot ── */
+    .comp-status {
+      display: inline-flex; align-items: center; gap: 5px;
+      font-size: 0.72rem; font-weight: 700; color: var(--text-muted);
+      text-transform: uppercase; letter-spacing: 0.05em;
+    }
+    .status-dot {
+      width: 6px; height: 6px; border-radius: 50%; background: var(--text-muted); flex-shrink: 0;
+    }
+    .status-dot.active { background: #4caf50; }
+    .status-dot.upcoming { background: var(--accent); }
+    .status-dot.tbd { background: var(--border); border: 1.5px solid var(--text-muted); }
+
+    /* ── Reveal delays for extra cards ── */
+    .reveal-delay-5 { transition-delay: 0.40s; }
+    .reveal-delay-6 { transition-delay: 0.48s; }
+    .reveal-delay-7 { transition-delay: 0.56s; }
+  </style>
 </head>
 <body>
   <a href="#main" class="skip-link">Skip to content</a>
@@ -21,18 +74,16 @@
         <a href="index.html">Home</a>
         <a href="about.html">About</a>
         <a href="projects.html">Work</a>
-        <a href="teams.html">Teams</a>
+        <a href="teams.html">Team</a>
         <a href="sponsor.html">Sponsor</a>
         <a href="contact.html">Contact</a>
         <a href="tryouts.html" style="color: var(--accent); font-weight: 700;">Tryouts</a>
       </nav>
       <div class="nav-actions">
         <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
-          <!-- Moon: shown in light mode -->
           <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
             <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
           </svg>
-          <!-- Sun: shown in dark mode -->
           <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
             <circle cx="12" cy="12" r="5"/>
             <line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/>
@@ -41,7 +92,6 @@
             <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
           </svg>
         </button>
-
         <a href="contact.html" class="btn-nav">Join Us</a>
         <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
           <span></span><span></span><span></span>
@@ -54,52 +104,65 @@
     <a href="index.html">Home</a>
     <a href="about.html">About</a>
     <a href="projects.html">Work</a>
-    <a href="teams.html">Teams</a>
+    <a href="teams.html">Team</a>
     <a href="sponsor.html">Sponsor</a>
     <a href="contact.html">Contact</a>
-    <a href="tryouts.html" style="color: var(--accent);">Tryouts →</a>
+    <a href="tryouts.html" style="color: var(--accent);">Tryouts</a>
   </nav>
 
   <main id="main">
 
+    <!-- PAGE HEADER -->
     <div class="page-header">
       <div class="container">
-        <div class="section-label">Sub-Teams</div>
-        <h1>Four teams.<br /><em>One rocket.</em></h1>
-        <p>Every part of what we build is owned by a dedicated sub-team. Here's what each one does and what you'd learn by joining.</p>
+        <div class="section-label">Our Team</div>
+        <h1>One team.<br /><em>Many roles.</em></h1>
+        <p>SBAerospace is a single unified team. What separates members is their <strong>role</strong>: the skillset they develop and the part of the mission they own. Each role contributes to different competitions and projects throughout the year.</p>
       </div>
     </div>
 
-    <!-- ── DIVISION CARDS ──────────────────────────────────── -->
-    <section class="section">
+    <!-- WHY ROLES -->
+    <section class="section" style="background: var(--surface);">
       <div class="container">
+        <div class="reveal" style="max-width: 760px; margin: 0 auto; text-align: center;">
+          <div class="section-label">How It Works</div>
+          <h2 class="section-title" style="margin-bottom: 1.25rem;">Your role is your starting point,<br /><em>not your ceiling.</em></h2>
+          <p style="color: var(--text-2); font-size: 1.05rem; line-height: 1.8; margin-bottom: 1rem;">
+            Every member holds a role that defines their core contribution. Roles overlap, inform each other, and feed into shared outcomes. A member in the Rocketry role might work on an airframe for ARC in the fall, then collaborate with Biology on a Genes In Space experiment in the spring.
+          </p>
+          <p style="color: var(--text-2); font-size: 1.05rem; line-height: 1.8;">
+            Not every role touches every competition. That's intentional. Below you'll find which roles drive which projects, so you can join the role that matches what you want to build and learn.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ROLE CARDS -->
+    <section class="section" id="roles">
+      <div class="container">
+        <div class="section-label reveal">Roles</div>
+        <h2 class="section-title reveal" style="margin-bottom: 0.5rem;">Eight roles. Every one matters.</h2>
+        <p class="reveal" style="color: var(--text-2); margin-bottom: 2.5rem; max-width: 560px;">Each role card shows what the role does and which competitions it directly contributes to.</p>
         <div class="division-grid">
 
+          <!-- ROCKETRY -->
           <div class="division-card reveal div-rocketry">
             <div class="division-card-head">
               <div class="division-icon">
                 <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: var(--accent);">
                   <path d="M4.5 16.5c-1.5 1.25-2.5 3.5-2.5 3.5s2.25-1 3.5-2.5L16.5 6.5c1.5-1.5 1.5-3.5 1.5-3.5s-2 0-3.5 1.5L4.5 16.5z"/>
-                  <path d="M12 9l3 3"/>
-                  <path d="M9 12l3 3"/>
-                  <path d="M3 21l3-3"/>
+                  <path d="M12 9l3 3"/><path d="M9 12l3 3"/><path d="M3 21l3-3"/>
                 </svg>
               </div>
               <div>
-                <h3>Rocketry Team</h3>
-                <div class="sub">Design & Launch</div>
+                <h3>Rocketry</h3>
+                <div class="sub">Airframes, Recovery, Launch Ops</div>
               </div>
             </div>
-            <p>
-              The rocketry team designs and builds everything that leaves the ground: airframes, nose cones, fins, and recovery systems. They're responsible for translating simulation data into physical hardware and getting the rocket to the pad safely.
-            </p>
+            <p>Designs and builds everything that leaves the ground: airframes, nose cones, fins, recovery systems, and motor selection. Responsible for translating simulation data into physical hardware and running launch day operations.</p>
             <div class="division-specs">
               <div class="div-spec-item">
-                <div class="div-spec-key">Certifications</div>
-                <div class="div-spec-val">TRA L1 target</div>
-              </div>
-              <div class="div-spec-item">
-                <div class="div-spec-key">Main tool</div>
+                <div class="div-spec-key">Sim tool</div>
                 <div class="div-spec-val">OpenRocket</div>
               </div>
               <div class="div-spec-item">
@@ -107,12 +170,17 @@
                 <div class="div-spec-val">G12 FG, plywood</div>
               </div>
               <div class="div-spec-item">
-                <div class="div-spec-key">Competition</div>
-                <div class="div-spec-val">ARC 2025</div>
+                <div class="div-spec-key">ARC</div>
+                <div class="div-spec-val">Primary build role</div>
+              </div>
+              <div class="div-spec-item">
+                <div class="div-spec-key">TechRise</div>
+                <div class="div-spec-val">Payload integration</div>
               </div>
             </div>
           </div>
 
+          <!-- ELECTRONICS -->
           <div class="division-card reveal reveal-delay-1 div-electronics">
             <div class="division-card-head">
               <div class="division-icon">
@@ -126,13 +194,11 @@
                 </svg>
               </div>
               <div>
-                <h3>Electronics Team</h3>
-                <div class="sub">Avionics & PCB</div>
+                <h3>Electronics</h3>
+                <div class="sub">Avionics, PCB, Sensors</div>
               </div>
             </div>
-            <p>
-              The electronics team designs and builds the hardware that goes inside the rocket. That means custom PCBs, flight computers, sensor arrays, and telemetry systems. They also write the low-level firmware that makes all of it work.
-            </p>
+            <p>Designs custom PCBs, flight computers, sensor arrays, and telemetry systems, plus the firmware that drives them. Essential for instrumenting rockets in ARC, building scientific payloads in TechRise, and sensor systems for Cubes in Space and Genes In Space.</p>
             <div class="division-specs">
               <div class="div-spec-item">
                 <div class="div-spec-key">PCB tool</div>
@@ -143,16 +209,17 @@
                 <div class="div-spec-val">RP2040 / STM32</div>
               </div>
               <div class="div-spec-item">
-                <div class="div-spec-key">Main project</div>
-                <div class="div-spec-val">Rocket++</div>
+                <div class="div-spec-key">ARC</div>
+                <div class="div-spec-val">Flight data logging</div>
               </div>
               <div class="div-spec-item">
-                <div class="div-spec-key">Firmware lang.</div>
-                <div class="div-spec-val">C / MicroPython</div>
+                <div class="div-spec-key">ROV / Drone</div>
+                <div class="div-spec-val">Control systems</div>
               </div>
             </div>
           </div>
 
+          <!-- MECHANICAL -->
           <div class="division-card reveal reveal-delay-2 div-mechanical">
             <div class="division-card-head">
               <div class="division-icon">
@@ -162,33 +229,32 @@
                 </svg>
               </div>
               <div>
-                <h3>Mechanical Team</h3>
-                <div class="sub">CAD & Fabrication</div>
+                <h3>Mechanical</h3>
+                <div class="sub">CAD, Fabrication, Structures</div>
               </div>
             </div>
-            <p>
-              The mechanical team owns the structural side of everything we build. They CAD every component before it gets made, run FEA on critical parts, and do the actual fabrication, whether that's machining, 3D printing, or hand-laying composites.
-            </p>
+            <p>Owns the structural side of every build: CAD, FEA, composites, 3D printing, and machining. Works across ARC airframes, ROV chassis, rover structures for the NASA Human Exploration Rover Challenge, drone frames, and payload housings for TechRise and Cubes in Space.</p>
             <div class="division-specs">
               <div class="div-spec-item">
-                <div class="div-spec-key">CAD</div>
+                <div class="div-spec-key">CAD tools</div>
                 <div class="div-spec-val">SolidWorks, Fusion</div>
               </div>
               <div class="div-spec-item">
-                <div class="div-spec-key">Fab methods</div>
-                <div class="div-spec-val">FDM, composites</div>
+                <div class="div-spec-key">Fab</div>
+                <div class="div-spec-val">FDM, composites, CNC</div>
               </div>
               <div class="div-spec-item">
-                <div class="div-spec-key">Analysis</div>
-                <div class="div-spec-val">FEA, hand calcs</div>
+                <div class="div-spec-key">ARC / Rover</div>
+                <div class="div-spec-val">Airframe + chassis</div>
               </div>
               <div class="div-spec-item">
-                <div class="div-spec-key">Current focus</div>
-                <div class="div-spec-val">Airbrake system</div>
+                <div class="div-spec-key">MATE ROV</div>
+                <div class="div-spec-val">Frame and thrusters</div>
               </div>
             </div>
           </div>
 
+          <!-- SOFTWARE -->
           <div class="division-card reveal reveal-delay-3 div-software">
             <div class="division-card-head">
               <div class="division-icon">
@@ -198,13 +264,11 @@
                 </svg>
               </div>
               <div>
-                <h3>Software Team</h3>
-                <div class="sub">Simulations & Tools</div>
+                <h3>Software</h3>
+                <div class="sub">Simulations, Tools, Firmware</div>
               </div>
             </div>
-            <p>
-              The software team builds the tools the whole club depends on: flight simulators, data visualization pipelines, ground station GUIs, and open-source utilities. They also support the electronics team with embedded firmware when needed.
-            </p>
+            <p>Builds the digital infrastructure the whole team depends on: flight simulators, ground station GUIs, data pipelines, autonomy code for drones and rovers, and embedded firmware. Supports nearly every competition in some capacity.</p>
             <div class="division-specs">
               <div class="div-spec-item">
                 <div class="div-spec-key">Languages</div>
@@ -215,12 +279,154 @@
                 <div class="div-spec-val">RASAero, OpenRocket</div>
               </div>
               <div class="div-spec-item">
-                <div class="div-spec-key">Main project</div>
-                <div class="div-spec-val">CircuitSpace</div>
+                <div class="div-spec-key">ARC</div>
+                <div class="div-spec-val">Simulation + analysis</div>
               </div>
               <div class="div-spec-item">
-                <div class="div-spec-key">Open source</div>
-                <div class="div-spec-val">GitHub</div>
+                <div class="div-spec-key">Drone / Rover</div>
+                <div class="div-spec-val">Autonomy + control</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- CHEMISTRY / MATERIALS -->
+          <div class="division-card reveal reveal-delay-4">
+            <div class="division-card-head">
+              <div class="division-icon">
+                <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: var(--accent);">
+                  <path d="M9 3h6v11l3 7H6l3-7V3z"/>
+                  <path d="M6 18h12"/>
+                  <path d="M9 3H6"/>
+                  <path d="M15 3h3"/>
+                </svg>
+              </div>
+              <div>
+                <h3>Chemistry / Materials</h3>
+                <div class="sub">Propellants, Composites, R&amp;D</div>
+              </div>
+            </div>
+            <p>Evaluates and selects propellant systems, composite materials, and adhesives for every build. Leads experimental work on lightweight materials for airframes and payload housings. Central to Genes In Space and Cubes in Space experiments where material constraints and chemical conditions are mission-critical.</p>
+            <div class="division-specs">
+              <div class="div-spec-item">
+                <div class="div-spec-key">Focus</div>
+                <div class="div-spec-val">Composites, propellants</div>
+              </div>
+              <div class="div-spec-item">
+                <div class="div-spec-key">Tools</div>
+                <div class="div-spec-val">Lab testing, SDS review</div>
+              </div>
+              <div class="div-spec-item">
+                <div class="div-spec-key">Genes in Space</div>
+                <div class="div-spec-val">Experiment design</div>
+              </div>
+              <div class="div-spec-item">
+                <div class="div-spec-key">Cubes in Space</div>
+                <div class="div-spec-val">Material payload lead</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- BIOLOGY -->
+          <div class="division-card reveal reveal-delay-5">
+            <div class="division-card-head">
+              <div class="division-icon">
+                <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: var(--accent);">
+                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                </svg>
+              </div>
+              <div>
+                <h3>Biology</h3>
+                <div class="sub">Life Sciences, Space Biology</div>
+              </div>
+            </div>
+            <p>Designs and conducts life science experiments intended for high-altitude and microgravity environments. Leads our entries into Genes In Space (DNA experimentation) and Cubes in Space (small-scale biological payloads). Collaborates with Chemistry and Electronics on experiment packaging and sensor integration.</p>
+            <div class="division-specs">
+              <div class="div-spec-item">
+                <div class="div-spec-key">Focus</div>
+                <div class="div-spec-val">Microbiology, genetics</div>
+              </div>
+              <div class="div-spec-item">
+                <div class="div-spec-key">Method</div>
+                <div class="div-spec-val">PCR, cell culture</div>
+              </div>
+              <div class="div-spec-item">
+                <div class="div-spec-key">Genes in Space</div>
+                <div class="div-spec-val">Primary lead</div>
+              </div>
+              <div class="div-spec-item">
+                <div class="div-spec-key">Cubes in Space</div>
+                <div class="div-spec-val">Biological payload</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- FINANCES -->
+          <div class="division-card reveal reveal-delay-6">
+            <div class="division-card-head">
+              <div class="division-icon">
+                <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: var(--accent);">
+                  <line x1="12" y1="1" x2="12" y2="23"/>
+                  <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
+                </svg>
+              </div>
+              <div>
+                <h3>Finances</h3>
+                <div class="sub">Budgeting, Grants, Procurement</div>
+              </div>
+            </div>
+            <p>Manages the club's budget, tracks expenditures across projects, and coordinates grant applications and sponsorship funds. Every competition has material costs, registration fees, and travel expenses. The Finances role makes sure those are planned for and covered so technical work never stalls on budget.</p>
+            <div class="division-specs">
+              <div class="div-spec-item">
+                <div class="div-spec-key">Responsibility</div>
+                <div class="div-spec-val">Budget tracking</div>
+              </div>
+              <div class="div-spec-item">
+                <div class="div-spec-key">Tools</div>
+                <div class="div-spec-val">Spreadsheets, QuickBooks</div>
+              </div>
+              <div class="div-spec-item">
+                <div class="div-spec-key">Grants</div>
+                <div class="div-spec-val">Writing + applications</div>
+              </div>
+              <div class="div-spec-item">
+                <div class="div-spec-key">All competitions</div>
+                <div class="div-spec-val">Procurement support</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- OUTREACH / OPERATIONS -->
+          <div class="division-card reveal reveal-delay-7">
+            <div class="division-card-head">
+              <div class="division-icon">
+                <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: var(--accent);">
+                  <circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/>
+                  <line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/>
+                  <line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/>
+                </svg>
+              </div>
+              <div>
+                <h3>Outreach / Operations</h3>
+                <div class="sub">Comms, Events, Club Logistics</div>
+              </div>
+            </div>
+            <p>Runs club communications, social media, community partnerships, and event coordination. Handles competition registration logistics, travel planning, and meeting organization. Outreach members represent SBAerospace publicly and help grow the club's visibility in the school and STEM community.</p>
+            <div class="division-specs">
+              <div class="div-spec-item">
+                <div class="div-spec-key">Platforms</div>
+                <div class="div-spec-val">Instagram, LinkedIn</div>
+              </div>
+              <div class="div-spec-item">
+                <div class="div-spec-key">Events</div>
+                <div class="div-spec-val">STEM fairs, demos</div>
+              </div>
+              <div class="div-spec-item">
+                <div class="div-spec-key">Competitions</div>
+                <div class="div-spec-val">Registration + travel</div>
+              </div>
+              <div class="div-spec-item">
+                <div class="div-spec-key">Research Opps</div>
+                <div class="div-spec-val">Partner coordination</div>
               </div>
             </div>
           </div>
@@ -229,45 +435,222 @@
       </div>
     </section>
 
-    <!-- ── HOW TEAMS WORK TOGETHER ────────────────────────── -->
-    <section class="section" style="background: var(--surface);">
+    <!-- COMPETITIONS + ROLE MAP -->
+    <section class="section" style="background: var(--surface);" id="competitions">
+      <div class="container">
+        <div class="reveal" style="text-align: center; max-width: 640px; margin: 0 auto 3rem;">
+          <div class="section-label">Competitions</div>
+          <h2 class="section-title">What we compete in,<br /><em>and who leads it.</em></h2>
+          <p style="color: var(--text-2); line-height: 1.7;">Every competition we enter is owned by specific roles. This is where your role shows up in the real world. Pick a competition that interests you and find the role that drives it.</p>
+        </div>
+
+        <div class="comp-table-wrap reveal">
+          <table class="comp-table" aria-label="Competition and role matrix">
+            <thead>
+              <tr>
+                <th>Competition</th>
+                <th>Status</th>
+                <th>What it is</th>
+                <th>Roles involved</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>
+                  American Rocketry Challenge
+                  <a class="comp-link" href="https://www.rocketrychallenge.org/" target="_blank" rel="noopener noreferrer">rocketrychallenge.org</a>
+                </td>
+                <td><span class="comp-status"><span class="status-dot active"></span>Active</span></td>
+                <td>The largest student rocketry competition in the US. Design, build, and fly a rocket to a precise altitude with an egg payload and recovery system.</td>
+                <td>
+                  <div class="role-pills">
+                    <span class="role-pill primary">Rocketry</span>
+                    <span class="role-pill primary">Electronics</span>
+                    <span class="role-pill primary">Mechanical</span>
+                    <span class="role-pill primary">Software</span>
+                    <span class="role-pill">Finances</span>
+                    <span class="role-pill">Outreach</span>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  NASA TechRise
+                  <a class="comp-link" href="https://www.nasa.gov/stmd-flight-opportunities/access-flight-tests/techrise/" target="_blank" rel="noopener noreferrer">nasa.gov/techrise</a>
+                </td>
+                <td><span class="comp-status"><span class="status-dot active"></span>Active</span></td>
+                <td>Design a small scientific payload flown on a high-altitude balloon or suborbital rocket. Experiments must survive liftoff, microgravity, and recovery.</td>
+                <td>
+                  <div class="role-pills">
+                    <span class="role-pill primary">Electronics</span>
+                    <span class="role-pill primary">Mechanical</span>
+                    <span class="role-pill primary">Software</span>
+                    <span class="role-pill primary">Biology</span>
+                    <span class="role-pill primary">Chemistry</span>
+                    <span class="role-pill">Rocketry</span>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  Genes In Space
+                  <a class="comp-link" href="https://www.genesinspace.org/" target="_blank" rel="noopener noreferrer">genesinspace.org</a>
+                </td>
+                <td><span class="comp-status"><span class="status-dot upcoming"></span>Upcoming</span></td>
+                <td>Propose a DNA/genetics experiment designed to fly to the International Space Station. One of the most prestigious high school science competitions nationally.</td>
+                <td>
+                  <div class="role-pills">
+                    <span class="role-pill primary">Biology</span>
+                    <span class="role-pill primary">Chemistry</span>
+                    <span class="role-pill">Electronics</span>
+                    <span class="role-pill">Outreach</span>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  Cubes in Space
+                  <a class="comp-link" href="https://www.cubesinspace.com" target="_blank" rel="noopener noreferrer">cubesinspace.com</a>
+                </td>
+                <td><span class="comp-status"><span class="status-dot upcoming"></span>Upcoming</span></td>
+                <td>Design an experiment to fit in a 4cm cube, flown on a NASA sounding rocket or high-altitude balloon. Wide scope: biology, chemistry, materials, or electronics.</td>
+                <td>
+                  <div class="role-pills">
+                    <span class="role-pill primary">Biology</span>
+                    <span class="role-pill primary">Chemistry</span>
+                    <span class="role-pill primary">Electronics</span>
+                    <span class="role-pill primary">Mechanical</span>
+                    <span class="role-pill">Software</span>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  MATE ROV Competition
+                  <a class="comp-link" href="https://materovcompetition.org/" target="_blank" rel="noopener noreferrer">materovcompetition.org</a>
+                </td>
+                <td><span class="comp-status"><span class="status-dot upcoming"></span>Upcoming</span></td>
+                <td>Build an underwater remotely operated vehicle (ROV) to complete real-world underwater mission tasks. Tests mechanical design, control systems, and teamwork under pressure.</td>
+                <td>
+                  <div class="role-pills">
+                    <span class="role-pill primary">Mechanical</span>
+                    <span class="role-pill primary">Electronics</span>
+                    <span class="role-pill primary">Software</span>
+                    <span class="role-pill">Finances</span>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  NASA Human Exploration Rover Challenge
+                  <a class="comp-link" href="https://www.nasa.gov/learning-resources/nasa-human-exploration-rover-challenge/" target="_blank" rel="noopener noreferrer">nasa.gov/herc</a>
+                </td>
+                <td><span class="comp-status"><span class="status-dot upcoming"></span>Upcoming</span></td>
+                <td>Design and build a human-powered rover to navigate a simulated planetary terrain course at NASA Marshall Space Flight Center. Tests structural engineering and ergonomic design.</td>
+                <td>
+                  <div class="role-pills">
+                    <span class="role-pill primary">Mechanical</span>
+                    <span class="role-pill primary">Electronics</span>
+                    <span class="role-pill">Software</span>
+                    <span class="role-pill">Chemistry</span>
+                    <span class="role-pill">Finances</span>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  REC Aerial Drone Competition
+                  <a class="comp-link" href="https://recf.org/teams/competition/aerial-drone-competition/" target="_blank" rel="noopener noreferrer">recf.org/aerial-drone</a>
+                </td>
+                <td><span class="comp-status"><span class="status-dot upcoming"></span>Upcoming</span></td>
+                <td>Design, build, and fly a drone to complete autonomous and piloted mission objectives. Focuses on aeronautics, control theory, and real-time systems.</td>
+                <td>
+                  <div class="role-pills">
+                    <span class="role-pill primary">Software</span>
+                    <span class="role-pill primary">Electronics</span>
+                    <span class="role-pill primary">Mechanical</span>
+                    <span class="role-pill">Rocketry</span>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  Aviation Design Challenge
+                  <a class="comp-link" href="#" target="_blank" rel="noopener noreferrer">Includes free Cessna flight experience</a>
+                </td>
+                <td><span class="comp-status"><span class="status-dot upcoming"></span>Upcoming</span></td>
+                <td>Design an aircraft or aviation system and present it in a competitive format. Winners receive an actual Cessna flight experience. Open to creative interdisciplinary approaches.</td>
+                <td>
+                  <div class="role-pills">
+                    <span class="role-pill primary">Mechanical</span>
+                    <span class="role-pill primary">Software</span>
+                    <span class="role-pill">Electronics</span>
+                    <span class="role-pill">Outreach</span>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  Research Opportunities
+                  <a class="comp-link" href="tryouts.html">See tryouts page for details</a>
+                </td>
+                <td><span class="comp-status"><span class="status-dot tbd"></span>TBD</span></td>
+                <td>Collaborative research partnerships with universities, national labs, or industry mentors. Open-ended in scope: could span materials science, life sciences, data science, or aerospace engineering.</td>
+                <td>
+                  <div class="role-pills">
+                    <span class="role-pill primary">Biology</span>
+                    <span class="role-pill primary">Chemistry</span>
+                    <span class="role-pill primary">Software</span>
+                    <span class="role-pill">Electronics</span>
+                    <span class="role-pill">Outreach</span>
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- HOW THE TEAM WORKS TOGETHER -->
+    <section class="section">
       <div class="container">
         <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center;" class="reveal">
           <div>
             <div class="section-label">How We Work</div>
-            <h2 class="section-title">Separate teams,<br /><em>shared rocket.</em></h2>
+            <h2 class="section-title">Roles specialize.<br /><em>The team integrates.</em></h2>
             <p style="color: var(--text-2); line-height: 1.7; margin-bottom: 1.25rem;">
-              Each sub-team has its own meetings, leads, and projects, but everything eventually integrates. A fin designed by mechanical has to fit around wires run by electronics. A PID loop written by software has to talk to a servo mounted by mechanical.
+              Your role is your home base, not your limit. A fin designed by Mechanical has to fit around wires from Electronics. Biology experiments need Chemistry to validate materials. Software simulations inform Rocketry's motor selection. Nobody works in a vacuum.
             </p>
             <p style="color: var(--text-2); line-height: 1.7;">
-              We do cross-team reviews before finalizing any design, and hold weekly all-hands meetings to keep everyone on the same page. There's a lot of overlap, and that's the point.
+              We run cross-role design reviews before finalizing any build and hold weekly all-hands meetings to keep everyone aligned across competitions. Finances and Outreach make sure the work gets funded and seen.
             </p>
           </div>
           <div class="cards-grid" style="grid-template-columns: 1fr 1fr;">
             <div class="card" style="grid-column: span 2;">
-              <h3>Weekly Design Reviews</h3>
-              <p>Every team presents progress. Leads flag integration concerns early before anything gets built.</p>
+              <h3>Weekly All-Hands</h3>
+              <p>Every role presents progress. Leads surface integration concerns early so nothing stalls another team's work.</p>
             </div>
             <div class="card">
-              <h3>Cross-team mentorship</h3>
-              <p>Electronics teaches mechanical to solder. Software teaches rocketry to read sensor data.</p>
+              <h3>Cross-role mentorship</h3>
+              <p>Electronics teaches soldering. Biology teaches experiment design. Everyone teaches and everyone learns.</p>
             </div>
             <div class="card">
               <h3>Shared documentation</h3>
-              <p>Every design file, datasheet, and meeting note lives on our shared GitHub org.</p>
+              <p>Every design file, protocol, budget sheet, and meeting note lives in our shared GitHub org and Drive.</p>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- ── JOIN ───────────────────────────────────────────── -->
+    <!-- JOIN -->
     <section class="section-sm">
       <div class="container">
         <div class="cta-banner reveal">
-          <h2>Want to join a team?</h2>
-          <p>We take new members every semester. You don't need experience, just curiosity and the willingness to show up.</p>
-          <a href="contact.html" class="btn btn-primary">Get in Touch →</a>
+          <h2>Find your role. Join the team.</h2>
+          <p>We take new members every semester across all eight roles. No prior experience needed. Come curious and ready to work.</p>
+          <a href="tryouts.html" class="btn btn-primary">Apply for Tryouts</a>
         </div>
       </div>
     </section>
@@ -284,7 +667,7 @@
         <h4>Pages</h4>
         <a href="about.html">About</a>
         <a href="projects.html">Work</a>
-        <a href="teams.html">Teams</a>
+        <a href="teams.html">Team</a>
         <a href="sponsor.html">Sponsor</a>
         <a href="contact.html">Contact</a>
       </div>
@@ -298,7 +681,7 @@
       </div>
     </div>
     <div class="footer-bottom">
-      <span>© <span id="copy-year">2026</span> SBAerospace. South Brunswick, NJ.</span>
+      <span>&copy; <span id="copy-year">2026</span> SBAerospace. South Brunswick, NJ.</span>
       <a href="contact.html">sbhsaerospace@gmail.com</a>
     </div>
   </footer>

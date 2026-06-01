@@ -127,7 +127,7 @@ document.addEventListener('DOMContentLoaded', function () {
     },
     software: {
       title: 'Software',
-      desc: 'From flight simulations to ground station GUIs, our software team builds the tools the whole club relies on.',
+      desc: 'From flight simulations to ground station GUIs, our software builds the tools the whole team relies on.',
       features: ['Flight path simulation', 'Real-time telemetry dashboards', 'Data analysis & visualization', 'Embedded Python & C++ firmware'],
     },
   };
@@ -209,26 +209,26 @@ document.addEventListener('DOMContentLoaded', function () {
   const scene = document.querySelector('.hero-interactive-scene');
 
   if (hero && rocket && scene) {
+    // Use a small dark opacity initially via inline style so CSS transition doesn't block
+    rocket.style.opacity = '0';
+
     let currentX = window.innerWidth * 0.78;
     let currentY = window.innerHeight * 0.35;
     let targetX = currentX;
     let targetY = currentY;
     let currentRot = 0;
-    let targetRot = 0;
     let isHovering = false;
     let idleTime = 0;
     let particleThrottle = 0;
+    let initialized = false;
 
-    // Default resting positions based on screen dimensions
-    let defaultRestingX = window.innerWidth * 0.78;
-    let defaultRestingY = window.innerHeight * 0.35;
+    function getDefaultX() { return window.innerWidth * 0.78; }
+    function getDefaultY() { return window.innerHeight * 0.35; }
 
     window.addEventListener('resize', () => {
-      defaultRestingX = window.innerWidth * 0.78;
-      defaultRestingY = window.innerHeight * 0.35;
       if (!isHovering) {
-        targetX = defaultRestingX;
-        targetY = defaultRestingY;
+        targetX = getDefaultX();
+        targetY = getDefaultY();
       }
     });
 
@@ -247,82 +247,73 @@ document.addEventListener('DOMContentLoaded', function () {
       const particle = document.createElement('div');
       particle.className = 'rocket-particle';
 
-      // Convert rotation angle (0 is straight up, clockwise) to standard screen coords
+      // CSS rotate(deg) is clockwise. At rotation=0 rocket points up; nozzle is 40px below center.
+      // Rotating local vector (0, +40) clockwise by `rotation` degrees:
+      //   screenX += sin(rot) * 40,  screenY += cos(rot) * 40
       const angleRad = rotation * Math.PI / 180;
       const sinA = Math.sin(angleRad);
       const cosA = Math.cos(angleRad);
+      const nozzleOffset = 40; // px from SVG center to nozzle exit
 
-      // Tail nozzle position offset (height is 90px, Y center offset to nozzle exit is 34px)
-      const tailX = x - 34 * sinA;
-      const tailY = y + 34 * cosA;
-
-      particle.style.left = `${tailX}px`;
-      particle.style.top = `${tailY}px`;
+      particle.style.left = `${x + sinA * nozzleOffset}px`;
+      particle.style.top  = `${y + cosA * nozzleOffset}px`;
       scene.appendChild(particle);
 
-      // Random dispersion vector
-      const speed = 10 + Math.random() * 15;
-      const driftX = -sinA * speed + (Math.random() - 0.5) * 8;
-      const driftY = cosA * speed + (Math.random() - 0.5) * 8;
+      // Exhaust shoots opposite to nose direction
+      const speed = 12 + Math.random() * 14;
+      const driftX = -sinA * speed + (Math.random() - 0.5) * 6;
+      const driftY = -cosA * speed + (Math.random() - 0.5) * 6;
 
       requestAnimationFrame(() => {
         particle.style.transform = `translate(calc(-50% + ${driftX}px), calc(-50% + ${driftY}px)) scale(0.2)`;
         particle.style.opacity = '0';
       });
 
-      setTimeout(() => {
-        particle.remove();
-      }, 800);
+      setTimeout(() => { particle.remove(); }, 800);
     }
 
     function animateRocket() {
-      const scrollY = window.scrollY;
-      const heroHeight = hero.offsetHeight;
+      const scrollY = window.scrollY || window.pageYOffset || 0;
+      // Get hero height safely - fallback to window.innerHeight if not yet laid out
+      const heroHeight = hero.offsetHeight || window.innerHeight;
 
-      // Only animate if hero is visible on screen
-      if (scrollY < heroHeight + 100) {
-        // Scroll launch effect: propel rocket up faster than scroll and fade it out
-        const scrollProgress = Math.min(scrollY / 350, 1);
-        const launchOffset = scrollY * 2.2;
-        
+      // Fade out as user scrolls, disappear fully at scrollY = 500
+      const scrollProgress = Math.min(scrollY / 500, 1);
+      const rocketOpacity = 0.25 * (1 - scrollProgress);
+
+      if (scrollY < heroHeight + 200) {
+        const launchOffset = scrollY * 1.8;
+
         let activeTargetX = targetX;
         let activeTargetY = targetY - launchOffset;
 
         if (!isHovering) {
-          // Idle floating path
-          idleTime += 0.035;
-          activeTargetX = defaultRestingX + Math.sin(idleTime) * 35;
-          activeTargetY = (defaultRestingY - launchOffset) + Math.cos(idleTime * 0.5) * 20;
+          idleTime += 0.03;
+          activeTargetX = getDefaultX() + Math.sin(idleTime) * 32;
+          activeTargetY = (getDefaultY() - launchOffset) + Math.cos(idleTime * 0.5) * 18;
         }
 
         const dx = activeTargetX - currentX;
         const dy = activeTargetY - currentY;
         const dist = Math.hypot(dx, dy);
 
-        // Position interpolation
         currentX += dx * 0.055;
         currentY += dy * 0.055;
 
-        // Rotation interpolation
         let targetRotDeg = 0;
         if (dist > 2 && isHovering) {
-          // Heading angle (clockwise from straight up)
           targetRotDeg = Math.atan2(dy, dx) * 180 / Math.PI + 90;
         } else if (!isHovering) {
-          // Gentle sway in direction of idle float
-          targetRotDeg = Math.sin(idleTime) * 12;
+          targetRotDeg = Math.sin(idleTime) * 10;
         }
 
-        // Shortest path angle transition
         let diff = targetRotDeg - currentRot;
         diff = ((diff + 180) % 360) - 180;
         currentRot += diff * 0.07;
 
-        // Render rocket transform (centering with translate(-50%, -50%))
         rocket.style.transform = `translate3d(${currentX}px, ${currentY}px, 0) translate(-50%, -50%) rotate(${currentRot}deg)`;
-        rocket.style.opacity = (0.22 * (1 - scrollProgress)).toFixed(3);
+        rocket.style.opacity = rocketOpacity.toFixed(3);
 
-        // Particle trail spawn throttle
         particleThrottle++;
         if (particleThrottle >= 5) {
           if (dist > 1.5 || scrollY > 5) {
@@ -330,18 +321,23 @@ document.addEventListener('DOMContentLoaded', function () {
           }
           particleThrottle = 0;
         }
+      } else {
+        rocket.style.opacity = '0';
       }
 
       requestAnimationFrame(animateRocket);
     }
 
-    // Initialize position at rest coordinates
-    currentX = defaultRestingX;
-    currentY = defaultRestingY;
-    targetX = defaultRestingX;
-    targetY = defaultRestingY;
-
-    requestAnimationFrame(animateRocket);
+    // Defer initialization until layout is stable (after first paint)
+    requestAnimationFrame(() => {
+      requestAnimationFrame(() => {
+        currentX = getDefaultX();
+        currentY = getDefaultY();
+        targetX = getDefaultX();
+        targetY = getDefaultY();
+        animateRocket();
+      });
+    });
   }
 
   // ─── TIMELINE PROGRESS ROCKET ──────────────────────────────
