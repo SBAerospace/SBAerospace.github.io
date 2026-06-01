@@ -35,6 +35,9 @@ function applyTheme(theme) {
   });
 })();
 
+// ─── DYNAMIC COPYRIGHT YEAR ───────────────────────────────
+document.querySelectorAll('#copy-year').forEach(el => { el.textContent = new Date().getFullYear(); });
+
 document.addEventListener('DOMContentLoaded', function () {
 
   // ─── THEME TOGGLE ─────────────────────────────────────────

@@ -154,6 +154,26 @@ header {
 [data-theme="dark"] .theme-toggle .icon-sun  { display: block; }
 [data-theme="dark"] .theme-toggle .icon-moon { display: none; }
 
+/* Social icon links: same style as theme-toggle */
+.social-icon {
+  width: 34px; height: 34px; border-radius: 50%;
+  background: rgba(255,255,255,0.07);
+  border: 1px solid rgba(255,255,255,0.10);
+  display: flex; align-items: center; justify-content: center;
+  color: rgba(255,255,255,0.55);
+  transition: background 0.2s, color 0.2s;
+  flex-shrink: 0;
+}
+.social-icon:hover { background: rgba(255,255,255,0.13); color: rgba(255,255,255,0.9); }
+.social-icon svg { display: block; width: 15px; height: 15px; }
+
+/* Social divider line */
+.nav-social-divider {
+  width: 1px; height: 20px;
+  background: rgba(255,255,255,0.12);
+  flex-shrink: 0;
+}
+
 .btn-nav {
   padding: 0.5rem 1.25rem;
   background: var(--accent); color: #0A0A0A;
